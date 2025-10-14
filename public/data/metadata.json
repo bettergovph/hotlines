@@ -82,6 +82,15 @@
             ]
           }
         ]
+      },
+      {
+        "name": "Region X - Northern Mindanao",
+        "provinces": [
+          {
+            "province": "Lanao del Norte",
+            "cities": ["Iligan City"]
+          }
+        ]
       }
     ],
     "categories": [

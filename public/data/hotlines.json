@@ -1,6 +1,186 @@
 {
   "hotlines": [
     {
+      "hotlineName": "Iligan City Police Office",
+      "hotlineNumber": "+639177127411",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["167"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 1 - Tambo",
+      "hotlineNumber": "9171663440",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": [" 911"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 2 - Nunucan",
+      "hotlineNumber": "9177252854",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["165"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 3 - Tag-ibo",
+      "hotlineNumber": "9354320803",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["168"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 4 - Tubod",
+      "hotlineNumber": "9354847972",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": [" 162"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 5 - Poblacion",
+      "hotlineNumber": "9655390808",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["166"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 6",
+      "hotlineNumber": "9273832181",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Mobile Force Company",
+      "hotlineNumber": "9559016880",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Pnp Headquarters",
+      "hotlineNumber": "166",
+      "regionName": "Region X - Northern Mindanao",
+      "p rovince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pnp Crime Laboratory Tipanoy",
+      "hotlineNumber": "221-0499",
+      "regionName": "Region X - Northern Mindanao ",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Disaster Risk Reduction and Management Office (icdrrmo)",
+      "hotlineNumber": "9977262692",
+      "r egionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["811"]
+    },
+    {
+      "hotlineName": "Dr. Uy Hospital Inc.",
+      "hotlineNumber": "225-4530",
+      "regionName": "Region X - Northern Mindanao",
+      "prov ince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Adventist Medical Center",
+      "hotlineNumber": "221-3029",
+      "regionName": "Region X - Northern Mindanao",
+      " province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["221-7306"]
+    },
+    {
+      "hotlineName": "St Mary's Maternity & Children's Hospital",
+      "hotlineNumber": "221-3210",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers ": []
+    },
+    {
+      "hotlineName": "Iligan Medical Center",
+      "hotlineNumber": "221-4661",
+      "regionName": "Region X - Northern Mindanao",
+      "pro vince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Ambulance Gtlmh",
+      "hotlineNumber": "221-0081",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "E&r Hospital",
+      "hotlineNumber": "223-4246",
+      "regionName": "Region X - Northern Mindanao",
+      "province": " Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "St. Anthony Maternity's and Child",
+      "hotlineNumber": "221-5748",
+      "regionName": "Region X - Northern Min danao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Hospital Gtlmh",
+      "hotlineNumber": "223-0602",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Mercy Community Hospitals Inc.",
+      "hotlineNumber": "221-3762",
+      "regionName": "Region X - Northern Mindan ao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
       "hotlineName": "Alfonso PNP",
       "hotlineNumber": "09065366135",
       "regionName": "Region IV-A",
