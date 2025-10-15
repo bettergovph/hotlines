@@ -1451,6 +1451,15 @@
     },
 
     {
+      "hotlineName": "QC Helpline",
+      "hotlineNumber": "122",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Quezon City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
       "hotlineName": "Emergency Operations Center",
       "hotlineNumber": "89884242",
       "regionName": "National Capital Region (NCR)",
