@@ -203,9 +203,14 @@ const HomeContent = () => {
     utility_hotlines: 4,
   };
 
-  const sortedSelectedHotlines = selectedHotlines.sort(
-    (a, b) => sort[a.category] - sort[b.category]
-  );
+  const sortedSelectedHotlines = selectedHotlines.sort((a, b) => {
+    const categoryDiff = sort[a.category] - sort[b.category];
+    if (categoryDiff !== 0) {
+      return categoryDiff;
+    }
+
+    return a.hotlineName.localeCompare(b.hotlineName, 'en', { sensitivity: 'base' });
+  });
 
   // Compute cities to show in the city selector based on selected region
   const citiesToShow: string[] = filterOptions.region

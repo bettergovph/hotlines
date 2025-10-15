@@ -1,6 +1,240 @@
 {
   "hotlines": [
     {
+      "hotlineName": "Iligan City Police Office",
+      "hotlineNumber": "+639177127411",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["167"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 1 - Tambo",
+      "hotlineNumber": "09171663440",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["221-9315"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 2 - Nunucan",
+      "hotlineNumber": "09177151844",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["09985987008"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 3 - Tag-ibo",
+      "hotlineNumber": "09354320803",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Police Station 4 - Tubod",
+      "hotlineNumber": "09354847972",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["224-4088"]
+    },
+    {
+      "hotlineName": "Iligan City Police Station 5 - Poblacion",
+      "hotlineNumber": "09264251015",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Police Station 6",
+      "hotlineNumber": "09558753213",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Mobile Force Company",
+      "hotlineNumber": "09559016880",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Pnp Headquarters",
+      "hotlineNumber": "166",
+      "regionName": "Region X - Northern Mindanao",
+      "p rovince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pnp Crime Laboratory Tipanoy",
+      "hotlineNumber": "221-0499",
+      "regionName": "Region X - Northern Mindanao ",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Bureau of Fire Protection (BFP)",
+      "hotlineNumber": "160",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["161"]
+    },
+    {
+      "hotlineName": "Iligan City Fire Station",
+      "hotlineNumber": "221-9055",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["9056"]
+    },
+    {
+      "hotlineName": "Saray Sub-Station",
+      "hotlineNumber": "160",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["161"]
+    },
+    {
+      "hotlineName": "San Miguel Sub-Station",
+      "hotlineNumber": "221-7110",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Tubod Sub-Station",
+      "hotlineNumber": "221-3437",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Philippine Red Cross - Iligan City Chapter",
+      "hotlineNumber": "222-2907",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Philippine Red Cross - Iligan City Blood Center",
+      "hotlineNumber": "223-1064",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan City Disaster Risk Reduction and Management Office (icdrrmo)",
+      "hotlineNumber": "09977262692",
+      "r egionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09692337878"]
+    },
+    {
+      "hotlineName": "Dr. Uy Hospital Inc.",
+      "hotlineNumber": "225-4530",
+      "regionName": "Region X - Northern Mindanao",
+      "prov ince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Adventist Medical Center",
+      "hotlineNumber": "221-3029",
+      "regionName": "Region X - Northern Mindanao",
+      " province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["221-7306", "221-3636"]
+    },
+    {
+      "hotlineName": "St Mary's Maternity & Children's Hospital",
+      "hotlineNumber": "221-3210",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers ": []
+    },
+    {
+      "hotlineName": "Iligan Medical Center & Hospital",
+      "hotlineNumber": "221-4661",
+      "regionName": "Region X - Northern Mindanao",
+      "pro vince": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Gregorio Lluch Memorial Hospital Ambulance",
+      "hotlineNumber": "223-0602",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["221-0081"]
+    },
+    {
+      "hotlineName": "E&r Hospital",
+      "hotlineNumber": "221-1207",
+      "regionName": "Region X - Northern Mindanao",
+      "province": " Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["223-4246"]
+    },
+    {
+      "hotlineName": "St. Anthony Maternity's and Child",
+      "hotlineNumber": "221-5748",
+      "regionName": "Region X - Northern Min danao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Mercy Community Hospitals Inc.",
+      "hotlineNumber": "221-8374",
+      "regionName": "Region X - Northern Mindan ao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["221-3762"]
+    },
+    {
       "hotlineName": "Alfonso PNP",
       "hotlineNumber": "09065366135",
       "regionName": "Region IV-A",
