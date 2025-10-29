@@ -92,6 +92,15 @@
         ]
       },
       {
+        "name": "Region VI - Western Visayas",
+        "provinces": [
+          {
+            "province": "Capiz",
+            "cities": ["Roxas"]
+          }
+        ]
+      },
+      {
         "name": "Region X - Northern Mindanao",
         "provinces": [
           {
