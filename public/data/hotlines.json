@@ -2099,6 +2099,123 @@
       "city": "Lucena",
       "category": "police_hotlines",
       "alternateNumbers": ["09985985737", "0423737294", "0427884626"]
+    },
+    {
+      "hotlineName": "Roxas City Emergency Response Team",
+      "hotlineNumber": "09124722669",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09173066741", "0365227878"]
+    },
+    {
+      "hotlineName": "Roxas City Emergency Operation Center",
+      "hotlineNumber": "0365201086",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Roxas Memorial Provincial Hospital",
+      "hotlineNumber": "0366210823",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0366210030"]
+    },
+    {
+      "hotlineName": "Roxas City Health Office",
+      "hotlineNumber": "0366215686",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0366205103", "09219768315"]
+    },
+    {
+      "hotlineName": "Philippine Red Cross Roxas City Chapter",
+      "hotlineNumber": "0366211125",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09171085615"]
+    },
+    {
+      "hotlineName": "Capiz Emergency Response Team",
+      "hotlineNumber": "0365201203",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09307012206", "09984773357"]
+    },
+    {
+      "hotlineName": "Roxas City Bureau of Fire Protection",
+      "hotlineNumber": "0366210221",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["09506085228"]
+    },
+    {
+      "hotlineName": "Roxas City Police",
+      "hotlineNumber": "0366200284",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "police_hotlines",
+      "alternateNumbers": ["09297617489"]
+    },
+    {
+      "hotlineName": "CACAG (Capiz Citizens Action Group Inc.)",
+      "hotlineNumber": "0366211221",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["09219069888", "09914884988"]
+    },
+    {
+      "hotlineName": "Coast Guard Station Capiz",
+      "hotlineNumber": "09638008443",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Federation Roxas City Fire and Rescue Volunteers",
+      "hotlineNumber": "09127350573",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["0366430096"]
+    },
+    {
+      "hotlineName": "Metro Roxas Water District",
+      "hotlineNumber": "0366210044",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "utility_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "CAPELCO (Capiz Electric Cooperative Inc.)",
+      "hotlineNumber": "0366204930",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Roxas",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["09630438339"]
     }
   ]
 }
