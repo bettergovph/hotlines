@@ -7,11 +7,12 @@
           {
             "province": "Metro Manila",
             "cities": [
-              "Manila",
               "Caloocan",
-              "Mandaluyong",
-              "Quezon City",
               "Makati",
+              "Mandaluyong",
+              "Manila",
+              "Pasig",
+              "Quezon City",
               "Taguig",
               "Valenzuela"
             ]
