@@ -345,6 +345,7 @@ const HomeContent = () => {
               name={hotline.hotlineName}
               number={hotline.hotlineNumber}
               location={hotline.city}
+              alternateNumbers={hotline.alternateNumbers}
             />
           ))
         ) : (
