@@ -1478,7 +1478,339 @@
       "category": "medical_hotlines",
       "alternateNumbers": ["09478847498"]
     },
-
+    {
+      "hotlineName": "Pasig City DRRMO Emergency Hotline",
+      "hotlineNumber": "86430000",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Philippine National Police (PNP)",
+      "hotlineNumber": "84777953",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig - Bureau of Fire Protection (BFP)",
+      "hotlineNumber": "+639327798621",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City Children's Hospital",
+      "hotlineNumber": "86432222",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City General Hospital",
+      "hotlineNumber": "86427379",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["86427381"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Bagong Ilog",
+      "hotlineNumber": "09361808499",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09128154041", "09159019134"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Bagong Katipunan",
+      "hotlineNumber": "84774262",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Bambang",
+      "hotlineNumber": "70032600",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Buting",
+      "hotlineNumber": "09166647744",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09682141115"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Caniogan",
+      "hotlineNumber": "09670393182",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09086436720"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Dela Paz",
+      "hotlineNumber": "09999988844",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Kapasigan",
+      "hotlineNumber": "87254023",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Kapitolyo",
+      "hotlineNumber": "09670984620",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["86327598"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Malinao",
+      "hotlineNumber": "86416672",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["86327605"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Manggahan",
+      "hotlineNumber": "09088653031",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09171729744"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Oranbo",
+      "hotlineNumber": "09154062290",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["86310254"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Palatiw",
+      "hotlineNumber": "83739234",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["83740082"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Pinagbuhatan",
+      "hotlineNumber": "09238574110",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09152661400", "88804609"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Pineda",
+      "hotlineNumber": "09937890331",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Rosario",
+      "hotlineNumber": "79565695",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sagad",
+      "hotlineNumber": "86280227",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. San Antonio",
+      "hotlineNumber": "09186254428",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. San Joaquin",
+      "hotlineNumber": "09203065643",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. San Jose",
+      "hotlineNumber": "09670598674",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. San Miguel",
+      "hotlineNumber": "09569282660",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. San Nicolas",
+      "hotlineNumber": "09062748238",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["72397463"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Santolan - Brgy. Hall",
+      "hotlineNumber": "09173119756",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Santolan - Fire Rescue and Rescue Brigade",
+      "hotlineNumber": "09194500133",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["09104500133", "86821019"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Santolan - Brgy. Security Force",
+      "hotlineNumber": "09660641882",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "police_hotlines",
+      "alternateNumbers": ["86464627"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Santolan - Ambulance",
+      "hotlineNumber": "09513357000",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Santolan - Patient Transport Vehicle",
+      "hotlineNumber": "09127941722",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sta. Cruz",
+      "hotlineNumber": "73430611",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sta. Lucia",
+      "hotlineNumber": "09624964778",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sta. Rosa",
+      "hotlineNumber": "09617625452",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": ["72560509"]
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sto. Tomas",
+      "hotlineNumber": "71489575",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Sumilang",
+      "hotlineNumber": "09267283919",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pasig City - Brgy. Ugong",
+      "hotlineNumber": "09178164987",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Pasig",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
     {
       "hotlineName": "Makati City Hall Trunkline",
       "hotlineNumber": "88701000",
