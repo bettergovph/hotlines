@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import logo2 from '/public/bettergov-horizontal-logo.png';
 
@@ -20,15 +20,18 @@ import { IMetadataResponse } from '@/interfaces/IMetadata';
 import { IHotlinesResponse, THotlineCategory } from '@/interfaces/IHotlines';
 
 import { Button } from '@/components/ui/button';
-import { LucideIcon, Phone } from 'lucide-react';
-import { ChevronsUpDownIcon } from 'lucide-react';
-import { CheckIcon } from 'lucide-react';
-import { PhoneIcon } from 'lucide-react';
-import { CircleAlertIcon } from 'lucide-react';
-import { AmbulanceIcon } from 'lucide-react';
-import { DropletIcon } from 'lucide-react';
-import { LandmarkIcon } from 'lucide-react';
-import { SearchIcon } from 'lucide-react';
+import {
+  AmbulanceIcon,
+  CheckIcon,
+  ChevronsUpDownIcon,
+  CircleAlertIcon,
+  DropletIcon,
+  LandmarkIcon,
+  LucideIcon,
+  Phone,
+  PhoneIcon,
+  SearchIcon,
+} from 'lucide-react';
 
 const HomeContent = () => {
   const [metadata, setMetadata] = useState<IMetadataResponse | null>();
@@ -112,24 +115,33 @@ const HomeContent = () => {
           const data = await response.json();
           const city = data.city;
 
-          // Check if the detected city exists
-          // If it does, set it as a filtering option
-          const cityExists = metadata?.metadata.regions.some(region =>
-            region.provinces.some(province => province.cities.includes(city))
+          // Find the city and its province in metadata (case-insensitive)
+          const foundProvince = metadata.metadata.regions
+            .flatMap(region => region.provinces)
+            .find(province => province.cities.some(c => c.toLowerCase() === city.toLowerCase()));
+
+          // Get the actual city name from metadata (preserves original casing)
+          const actualCity = foundProvince?.cities.find(
+            c => c.toLowerCase() === city.toLowerCase()
           );
+
+          const foundCityValue =
+            foundProvince && actualCity
+              ? `${actualCity}|${foundProvince.province}`.toLowerCase()
+              : null;
 
           console.log('Metadata:', metadata);
           console.log('City:', city);
-          console.log('City exists:', cityExists);
+          console.log('Found city value:', foundCityValue);
 
-          if (cityExists) {
-            localStorage.setItem('lastSavedLocation', city);
+          if (foundCityValue) {
+            localStorage.setItem('lastSavedLocation', foundCityValue);
             console.log('City:', city);
             console.log('Saved location!');
 
             setFilterOptions(prev => ({
               ...prev,
-              city: city,
+              city: foundCityValue,
             }));
           }
 
@@ -142,7 +154,7 @@ const HomeContent = () => {
           if (stored) {
             setFilterOptions(prev => ({
               ...prev,
-              city: stored,
+              city: stored.toLowerCase(),
             }));
           }
 
@@ -155,11 +167,58 @@ const HomeContent = () => {
 
     detectLocation();
 
+    // Set default city in city|province format (lowercase for consistency)
+    const defaultCity = metadata.metadata.regions[0].provinces[0].cities[0];
+    const defaultProvince = metadata.metadata.regions[0].provinces[0].province;
     setFilterOptions(prev => ({
       ...prev,
-      city: metadata.metadata.regions[0].provinces[0].cities[0],
+      city: `${defaultCity}|${defaultProvince}`.toLowerCase(),
     }));
   }, [metadata]);
+
+  type LocationFilter = {
+    province: string;
+    city: string;
+    key: string; // format: "city|province"
+    displayName: string; // format: "city (province)" - conditionally show province if duplicate city name exists
+  };
+
+  // Count city name occurrences for duplicate detection (case-insensitive)
+  const cityCountsByName: Record<string, number> = useMemo(() => {
+    if (!metadata) {
+      return {};
+    }
+    return metadata.metadata.regions
+      .flatMap(region => region.provinces)
+      .flatMap(province => province.cities)
+      .reduce(
+        (acc, city) => {
+          const normalizedCity = city.toLowerCase();
+          acc[normalizedCity] = (acc[normalizedCity] || 0) + 1;
+          return acc;
+        },
+        {} as Record<string, number>
+      );
+  }, [metadata]);
+
+  // Build city list with 'smart' display names
+  // If a city name has duplicates then the province is appended e.g. Roxas (Capiz)
+  const locationFilters: LocationFilter[] = useMemo(() => {
+    if (!metadata) {
+      return [];
+    }
+    return metadata.metadata.regions
+      .flatMap(region => region.provinces)
+      .flatMap(province =>
+        province.cities.map(city => ({
+          province: province.province,
+          city,
+          key: `${city}|${province.province}`.toLowerCase(),
+          displayName:
+            cityCountsByName[city.toLowerCase()] > 1 ? `${city} (${province.province})` : city,
+        }))
+      );
+  }, [metadata, cityCountsByName]);
 
   if (!hotlines || !metadata || isDetectingLocation) {
     return (
@@ -174,7 +233,27 @@ const HomeContent = () => {
     );
   }
 
-  let selectedHotlines = hotlines.hotlines.filter(hotline => hotline.city === filterOptions.city);
+  const extractLocationFromFilter = (filterValue: string): { city: string; province?: string } => {
+    if (filterValue.includes('|')) {
+      const [city, province] = filterValue.split('|');
+      return { city, province };
+    }
+    return { city: filterValue };
+  };
+
+  const locationFromFilter = extractLocationFromFilter(filterOptions.city);
+  let selectedHotlines = hotlines.hotlines.filter(hotline => {
+    if (locationFromFilter.province) {
+      // Match both city and province (case-insensitive)
+      return (
+        hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase() &&
+        hotline.province.toLowerCase() === locationFromFilter.province.toLowerCase()
+      );
+    } else {
+      // Legacy: match city only (for backward compatibility, case-insensitive)
+      return hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase();
+    }
+  });
 
   const hotlineTypeMap: Record<string, THotlineCategory[]> = {
     'Emergency Hotlines': ['police_hotlines', 'fire_hotlines'],
@@ -228,7 +307,11 @@ const HomeContent = () => {
               aria-expanded={citySelectOpen}
               className="w-full justify-between rounded-full"
             >
-              {filterOptions.city !== '' ? filterOptions.city : 'Select City'}
+              {filterOptions.city !== ''
+                ? locationFilters.find(
+                    c => c.key.toLowerCase() === filterOptions.city.toLowerCase()
+                  )?.displayName || locationFromFilter.city
+                : 'Select City'}
               <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
@@ -238,32 +321,30 @@ const HomeContent = () => {
               <CommandList>
                 <CommandEmpty>No city found.</CommandEmpty>
                 <CommandGroup>
-                  {metadata.metadata.regions.map(region =>
-                    region.provinces.map(province =>
-                      province.cities.map(city => (
-                        <CommandItem
-                          key={city}
-                          value={city}
-                          onSelect={currentValue => {
-                            setFilterOptions(prev => ({
-                              ...prev,
-                              city: currentValue,
-                            }));
-                            setCitySelectOpen(false);
-                            localStorage.setItem('lastSavedLocation', city);
-                          }}
-                        >
-                          <CheckIcon
-                            className={cn(
-                              'mr-2 h-4 w-4',
-                              filterOptions.city === city ? 'opacity-100' : 'opacity-0'
-                            )}
-                          />
-                          {city}
-                        </CommandItem>
-                      ))
-                    )
-                  )}
+                  {locationFilters.map(cityData => (
+                    <CommandItem
+                      key={cityData.key}
+                      value={cityData.displayName}
+                      onSelect={() => {
+                        setFilterOptions(prev => ({
+                          ...prev,
+                          city: cityData.key,
+                        }));
+                        setCitySelectOpen(false);
+                        localStorage.setItem('lastSavedLocation', cityData.key);
+                      }}
+                    >
+                      <CheckIcon
+                        className={cn(
+                          'mr-2 h-4 w-4',
+                          filterOptions.city.toLowerCase() === cityData.key.toLowerCase()
+                            ? 'opacity-100'
+                            : 'opacity-0'
+                        )}
+                      />
+                      {cityData.displayName}
+                    </CommandItem>
+                  ))}
                 </CommandGroup>
               </CommandList>
             </Command>
@@ -345,6 +426,8 @@ const HomeContent = () => {
               name={hotline.hotlineName}
               number={hotline.hotlineNumber}
               location={hotline.city}
+              province={hotline.province}
+              showProvince={cityCountsByName[hotline.city.toLowerCase()] > 1}
             />
           ))
         ) : (

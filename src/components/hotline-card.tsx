@@ -9,9 +9,18 @@ type HotlineCardProps = {
   name: string;
   number: string;
   location?: string;
+  province?: string;
+  showProvince?: boolean; // Whether to show province (for duplicate cities)
 };
 
-const HotlineCard: React.FC<HotlineCardProps> = ({ type, name, number, location }) => {
+const HotlineCard: React.FC<HotlineCardProps> = ({
+  type,
+  name,
+  number,
+  location,
+  province,
+  showProvince,
+}) => {
   // TODO: integrate alternate numbers
 
   const icons: Record<THotlineCategory, LucideIcon> = {
@@ -61,7 +70,11 @@ const HotlineCard: React.FC<HotlineCardProps> = ({ type, name, number, location 
         <div className="flex flex-col">
           <div className="font-bold">{name}</div>
           <div className="flex flex-col gap-1">
-            {location && <div className="text-gray-700 text-xs text-neutral">{location}</div>}
+            {location && (
+              <div className="text-gray-700 text-xs text-neutral">
+                {showProvince && province ? `${location} (${province})` : location}
+              </div>
+            )}
             <div className="text-gray-800 text-sm">{number}</div>
             <div className="flex items-center gap-2 text-blue-600 text-sm">
               <Phone size={14} />
