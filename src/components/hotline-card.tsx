@@ -10,11 +10,17 @@ type HotlineCardProps = {
   number: string;
   location?: string;
   province?: string;
+  alternateNumbers: string[];
 };
 
-const HotlineCard: React.FC<HotlineCardProps> = ({ type, name, number, location, province }) => {
-  // TODO: integrate alternate numbers
-
+const HotlineCard: React.FC<HotlineCardProps> = ({
+  type,
+  name,
+  number,
+  location,
+  province,
+  alternateNumbers,
+}) => {
   const icons: Record<THotlineCategory, LucideIcon> = {
     police_hotlines: Siren,
     fire_hotlines: Flame,
@@ -49,10 +55,7 @@ const HotlineCard: React.FC<HotlineCardProps> = ({ type, name, number, location,
   const Icon = icons[type];
 
   return (
-    <a
-      href={`tel:${number}`}
-      className="flex flex-row border-gray-300 mx-4 border py-4 px-6 rounded-xl shadow-xs gap-4 bg-white"
-    >
+    <div className="flex flex-row border-gray-300 mx-4 border py-4 px-6 rounded-xl shadow-xs gap-4 bg-white">
       <div>
         <div className={cn('rounded-xl', 'p-3', colors[type].background, colors[type].text)}>
           <Icon />
@@ -61,21 +64,38 @@ const HotlineCard: React.FC<HotlineCardProps> = ({ type, name, number, location,
       <div className="flex flex-col gap-2">
         <div className="flex flex-col">
           <div className="font-bold">{name}</div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-2">
             {location && (
               <div className="text-gray-700 text-xs text-neutral">
                 {province ? `${location} (${province})` : location}
               </div>
             )}
-            <div className="text-gray-800 text-sm">{number}</div>
-            <div className="flex items-center gap-2 text-blue-600 text-sm">
-              <Phone size={14} />
-              <span>Tap to call</span>
-            </div>
+            <a
+              href={`tel:${number}`}
+              className="flex items-center gap-2 text-blue-600 text-base hover:underline transition-all"
+            >
+              <Phone size={16} />
+              <span>{number}</span>
+            </a>
+            {alternateNumbers && alternateNumbers.length > 0 && (
+              <>
+                <div className="text-gray-700 text-sm mt-2">Alternate Numbers:</div>
+                {alternateNumbers.map((altNumber, index) => (
+                  <a
+                    key={index}
+                    href={`tel:${altNumber}`}
+                    className="flex items-center gap-2 text-blue-600 text-sm hover:underline transition-all ml-4"
+                  >
+                    <Phone size={14} />
+                    <span>{altNumber}</span>
+                  </a>
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
