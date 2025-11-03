@@ -180,29 +180,10 @@ const HomeContent = () => {
     province: string;
     city: string;
     key: string; // format: "city|province"
-    displayName: string; // format: "city (province)" - conditionally show province if duplicate city name exists
+    displayName: string; // format: "city (province)"
   };
 
-  // Count city name occurrences for duplicate detection (case-insensitive)
-  const cityCountsByName: Record<string, number> = useMemo(() => {
-    if (!metadata) {
-      return {};
-    }
-    return metadata.metadata.regions
-      .flatMap(region => region.provinces)
-      .flatMap(province => province.cities)
-      .reduce(
-        (acc, city) => {
-          const normalizedCity = city.toLowerCase();
-          acc[normalizedCity] = (acc[normalizedCity] || 0) + 1;
-          return acc;
-        },
-        {} as Record<string, number>
-      );
-  }, [metadata]);
-
-  // Build city list with 'smart' display names
-  // If a city name has duplicates then the province is appended e.g. Roxas (Capiz)
+  // Build city list with province always appended
   const locationFilters: LocationFilter[] = useMemo(() => {
     if (!metadata) {
       return [];
@@ -214,11 +195,10 @@ const HomeContent = () => {
           province: province.province,
           city,
           key: `${city}|${province.province}`.toLowerCase(),
-          displayName:
-            cityCountsByName[city.toLowerCase()] > 1 ? `${city} (${province.province})` : city,
+          displayName: `${city} (${province.province})`,
         }))
       );
-  }, [metadata, cityCountsByName]);
+  }, [metadata]);
 
   if (!hotlines || !metadata || isDetectingLocation) {
     return (
@@ -427,7 +407,6 @@ const HomeContent = () => {
               number={hotline.hotlineNumber}
               location={hotline.city}
               province={hotline.province}
-              showProvince={cityCountsByName[hotline.city.toLowerCase()] > 1}
             />
           ))
         ) : (
