@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "regions": [
+      {
+        "name": "National Capital Region (NCR)",
+        "provinces": [
+          {
+            "province": "Metro Manila",
+            "cities": [
+              "Manila",
+              "Caloocan",
+              "Mandaluyong",
+              "Quezon City",
+              "Makati",
+              "Taguig",
+              "Valenzuela"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Region III - Central Luzon",
+        "provinces": [
+          {
+            "province": "Nueva Ecija",
+            "cities": ["San Jose"]
+          },
+          {
+            "province": "Zambales",
+            "cities": ["Olongapo"]
+          }
+        ]
+      },
+      {
+        "name": "Region IV-A",
+        "provinces": [
+          {
+            "province": "Batangas",
+            "cities": ["Batangas City", "Rosario"]
+          },
+          {
+            "province": "Cavite",
+            "cities": [
+              "Alfonso",
+              "Amadeo",
+              "Bacoor",
+              "Carmona",
+              "Cavite City",
+              "Dasmariñas",
+              "General Emilio Aguinaldo",
+              "General Mariano Alvarez",
+              "General Trias",
+              "Imus",
+              "Indang",
+              "Kawit",
+              "Magallanes",
+              "Maragondon",
+              "Mendez",
+              "Naic",
+              "Noveleta",
+              "Rosario",
+              "Silang",
+              "Tagaytay",
+              "Tanza",
+              "Ternate",
+              "Trece Martires"
+            ]
+          },
+          {
+            "province": "Laguna",
+            "cities": ["San Pablo"]
+          },
+          {
+            "province": "Quezon",
+            "cities": ["Lucena"]
+          },
+          {
+            "province": "Rizal",
+            "cities": [
+              "Angono",
+              "Antipolo",
+              "Baras",
+              "Binangonan",
+              "Cainta",
+              "Cardona",
+              "Jalajala",
+              "Montalban",
+              "Morong",
+              "Pililla",
+              "San Mateo",
+              "Tanay",
+              "Taytay",
+              "Teresa"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Region VI - Western Visayas",
+        "provinces": [
+          {
+            "province": "Antique",
+            "cities": ["San Jose"]
+          }
+        ]
+      },
+      {
+        "name": "Region X - Northern Mindanao",
+        "provinces": [
+          {
+            "province": "Lanao del Norte",
+            "cities": ["Iligan City"]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "fire_hotlines",
+      "police_hotlines",
+      "medical_hotlines",
+      "utility_hotlines",
+      "government_hotlines"
+    ]
+  }
+}
