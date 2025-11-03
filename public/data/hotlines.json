@@ -76,7 +76,7 @@
       "hotlineName": "Iligan City Pnp Headquarters",
       "hotlineNumber": "166",
       "regionName": "Region X - Northern Mindanao",
-      "p rovince": "Lanao del Norte",
+      "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
       "alternateNumbers": []
@@ -156,7 +156,7 @@
     {
       "hotlineName": "Iligan City Disaster Risk Reduction and Management Office (icdrrmo)",
       "hotlineNumber": "09977262692",
-      "r egionName": "Region X - Northern Mindanao",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
@@ -166,7 +166,7 @@
       "hotlineName": "Dr. Uy Hospital Inc.",
       "hotlineNumber": "225-4530",
       "regionName": "Region X - Northern Mindanao",
-      "prov ince": "Lanao del Norte",
+      "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
       "alternateNumbers": []
@@ -175,7 +175,7 @@
       "hotlineName": "Adventist Medical Center",
       "hotlineNumber": "221-3029",
       "regionName": "Region X - Northern Mindanao",
-      " province": "Lanao del Norte",
+      "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
       "alternateNumbers": ["221-7306", "221-3636"]
@@ -187,13 +187,13 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
-      "alternateNumbers ": []
+      "alternateNumbers": []
     },
     {
       "hotlineName": "Iligan Medical Center & Hospital",
       "hotlineNumber": "221-4661",
       "regionName": "Region X - Northern Mindanao",
-      "pro vince": "Lanao del Norte",
+      "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
       "alternateNumbers": []
@@ -211,7 +211,7 @@
       "hotlineName": "E&r Hospital",
       "hotlineNumber": "221-1207",
       "regionName": "Region X - Northern Mindanao",
-      "province": " Lanao del Norte",
+      "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
       "alternateNumbers": ["223-4246"]
