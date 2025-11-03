@@ -37,9 +37,11 @@ const HomeContent = () => {
 
   const [filterOptions, setFilterOptions] = useState<{
     city: string;
+    region?: string;
     category: string;
   }>({
     city: '',
+    region: undefined,
     category: 'All Hotlines', // default
   });
 
@@ -210,6 +212,13 @@ const HomeContent = () => {
     return a.hotlineName.localeCompare(b.hotlineName, 'en', { sensitivity: 'base' });
   });
 
+  // Compute cities to show in the city selector based on selected region
+  const citiesToShow: string[] = filterOptions.region
+    ? (metadata.metadata.regions
+        .find(r => r.name === filterOptions.region)
+        ?.provinces.flatMap(p => p.cities) ?? [])
+    : metadata.metadata.regions.flatMap(r => r.provinces.flatMap(p => p.cities));
+
   return (
     <div className="flex flex-col bg-slate-50 min-h-[100vh] mx-auto items-center pb-40">
       {/* NAV/HEADER */}
@@ -219,6 +228,7 @@ const HomeContent = () => {
 
       {/* FITERING OPTIONS */}
       <div className="flex flex-col gap-2 w-full px-3 pb-3 max-w-2xl">
+        {/* Filter by City */}
         <Popover open={citySelectOpen} onOpenChange={setCitySelectOpen}>
           <PopoverTrigger asChild>
             <Button
@@ -238,32 +248,74 @@ const HomeContent = () => {
               <CommandList>
                 <CommandEmpty>No city found.</CommandEmpty>
                 <CommandGroup>
-                  {metadata.metadata.regions.map(region =>
-                    region.provinces.map(province =>
-                      province.cities.map(city => (
-                        <CommandItem
-                          key={city}
-                          value={city}
-                          onSelect={currentValue => {
-                            setFilterOptions(prev => ({
-                              ...prev,
-                              city: currentValue,
-                            }));
-                            setCitySelectOpen(false);
-                            localStorage.setItem('lastSavedLocation', city);
-                          }}
-                        >
-                          <CheckIcon
-                            className={cn(
-                              'mr-2 h-4 w-4',
-                              filterOptions.city === city ? 'opacity-100' : 'opacity-0'
-                            )}
-                          />
-                          {city}
-                        </CommandItem>
-                      ))
-                    )
-                  )}
+                  {citiesToShow.map(city => (
+                    <CommandItem
+                      key={city}
+                      value={city}
+                      onSelect={currentValue => {
+                        setFilterOptions(prev => ({
+                          ...prev,
+                          city: currentValue,
+                        }));
+                        setCitySelectOpen(false);
+                        localStorage.setItem('lastSavedLocation', currentValue);
+                      }}
+                    >
+                      <CheckIcon
+                        className={cn(
+                          'mr-2 h-4 w-4',
+                          filterOptions.city === city ? 'opacity-100' : 'opacity-0'
+                        )}
+                      />
+                      {city}
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              </CommandList>
+            </Command>
+          </PopoverContent>
+        </Popover>
+
+        {/* Filter by Region */}
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button
+              variant="outline"
+              size="lg"
+              className="w-full justify-between rounded-full mt-2"
+            >
+              {filterOptions.region ? filterOptions.region : 'Select Region'}
+              <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+            <Command>
+              <CommandInput placeholder="Search regions..." />
+              <CommandList>
+                <CommandEmpty>No region found.</CommandEmpty>
+                <CommandGroup>
+                  {metadata.metadata.regions.map(region => (
+                    <CommandItem
+                      key={region.name}
+                      value={region.name}
+                      onSelect={currentValue => {
+                        setFilterOptions(prev => ({
+                          ...prev,
+                          region: currentValue,
+                          city: '', // Reset city when region changes
+                        }));
+                        localStorage.setItem('lastSavedRegion', currentValue);
+                      }}
+                    >
+                      <CheckIcon
+                        className={cn(
+                          'mr-2 h-4 w-4',
+                          filterOptions.region === region.name ? 'opacity-100' : 'opacity-0'
+                        )}
+                      />
+                      {region.name}
+                    </CommandItem>
+                  ))}
                 </CommandGroup>
               </CommandList>
             </Command>
@@ -374,7 +426,7 @@ const HomeContent = () => {
               </button>
             </div>
 
-            <p className="text-muted-foreground text-gray-500 mt-6">
+            <p className="text-muted-foreground mt-6">
               Need immediate assistance? Call{' '}
               <span className="font-semibold text-gray-700">911</span> for emergencies.
             </p>
