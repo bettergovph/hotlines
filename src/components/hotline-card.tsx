@@ -3,6 +3,15 @@
 import { THotlineCategory } from '@/interfaces/IHotlines';
 import { cn } from '@/lib/utils';
 import { Flame, Hospital, Landmark, LucideIcon, Phone, Siren } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import { useState } from 'react';
 
 type HotlineCardProps = {
   type: THotlineCategory;
@@ -21,6 +30,8 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
   province,
   alternateNumbers,
 }) => {
+  const [isAltNumModalOpen, setIsAltNumModalOpen] = useState(false);
+
   const icons: Record<THotlineCategory, LucideIcon> = {
     police_hotlines: Siren,
     fire_hotlines: Flame,
@@ -54,6 +65,11 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
 
   const Icon = icons[type];
 
+  const handleCall = (phoneNumber: string) => {
+    window.location.href = `tel:${phoneNumber}`;
+    setIsAltNumModalOpen(false);
+  };
+
   return (
     <div className="flex flex-row border-gray-300 mx-4 border py-4 px-6 rounded-xl shadow-xs gap-4 bg-white">
       <div>
@@ -70,28 +86,46 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
                 {province ? `${location} (${province})` : location}
               </div>
             )}
-            <a
-              href={`tel:${number}`}
-              className="flex items-center gap-2 text-blue-600 text-base hover:underline transition-all"
-            >
-              <Phone size={16} />
-              <span>{number}</span>
-            </a>
-            {alternateNumbers && alternateNumbers.length > 0 && (
-              <>
-                <div className="text-gray-700 text-sm mt-2">Alternate Numbers:</div>
-                {alternateNumbers.map((altNumber, index) => (
-                  <a
-                    key={index}
-                    href={`tel:${altNumber}`}
-                    className="flex items-center gap-2 text-blue-600 text-sm hover:underline transition-all ml-4"
-                  >
-                    <Phone size={14} />
-                    <span>{altNumber}</span>
-                  </a>
-                ))}
-              </>
-            )}
+
+            <div className="flex items-center gap-2 flex-wrap">
+              <Button
+                onClick={() => handleCall(number)}
+                variant="default"
+                size="sm"
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+              >
+                <Phone size={16} />
+                <span>{number}</span>
+              </Button>
+
+              {alternateNumbers && alternateNumbers.length > 0 && (
+                <Dialog open={isAltNumModalOpen} onOpenChange={setIsAltNumModalOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" size="sm" className="text-xs">
+                      Call alternate number
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Select a number to call</DialogTitle>
+                    </DialogHeader>
+                    <div className="flex flex-col gap-2 mt-4">
+                      {alternateNumbers.map((altNumber, index) => (
+                        <Button
+                          key={index}
+                          onClick={() => handleCall(altNumber)}
+                          variant="outline"
+                          className="flex items-center gap-3 text-blue-600 text-base justify-start h-auto py-3"
+                        >
+                          <Phone size={16} />
+                          <span>{altNumber}</span>
+                        </Button>
+                      ))}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              )}
+            </div>
           </div>
         </div>
       </div>
