@@ -88,6 +88,12 @@ pnpm install
 npm run dev
 ```
 
+## GitHub Codespaces
+
+You may use GitHub Codespaces for an instant development environment with dependencies automatically installed for you.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/bettergovph/hotlines)
+
 ## Contributing
 
 Contributions are welcome! The data structure makes it easy to add or update hotline information:

@@ -1,0 +1,12 @@
+{
+  "name": "BetterGov Hotlines Devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+    }
+  }
+}
