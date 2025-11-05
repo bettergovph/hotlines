@@ -2433,6 +2433,33 @@
       "alternateNumbers": ["09985985737", "0423737294", "0427884626"]
     },
     {
+      "hotlineName": "Municipal Disaster Risk Reduction and Management Office (MDRRMO)",
+      "hotlineNumber": "09476198376",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Ma-ayon",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Ma-ayon Fire Station",
+      "hotlineNumber": "09203916411",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Ma-ayon",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Ma-ayon Police Station",
+      "hotlineNumber": "09985986165",
+      "regionName": "Region VI",
+      "province": "Capiz",
+      "city": "Ma-ayon",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
       "hotlineName": "Roxas City Emergency Response Team",
       "hotlineNumber": "09124722669",
       "regionName": "Region VI",

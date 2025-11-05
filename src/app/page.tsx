@@ -297,7 +297,7 @@ const HomeContent = () => {
           </PopoverTrigger>
           <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
             <Command>
-              <CommandInput placeholder="Search cities..." />
+              <CommandInput placeholder="Search cities or municipalities..." />
               <CommandList>
                 <CommandEmpty>No city found.</CommandEmpty>
                 <CommandGroup>
