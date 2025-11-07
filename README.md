@@ -107,7 +107,7 @@ The app implements a robust offline-first approach:
 
 ```bash
 git clone https://github.com/bettergovph/hotlines.git
-cd hotlines-bettergov
+cd hotlines
 ```
 
 2. Install dependencies
