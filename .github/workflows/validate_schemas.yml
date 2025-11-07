@@ -12,6 +12,7 @@ on:
   pull_request:
     branches:
       - main
+    types: [opened, synchronize]
     paths:
       - 'public/data/hotlines.json'
       - 'public/data/metadata.json'
