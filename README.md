@@ -1,4 +1,4 @@
-# [Philippines Emergency Hotlines](https://github.com/waffensultan/hotlines-bettergov)
+# [Philippines Emergency Hotlines](https://github.com/bettergovph/hotlines)
 
 A progressive web application (PWA) for quick access to emergency hotlines across the Philippines.
 Users can search by region, province, city, and hotline type (police, fire, medical, government, etc.), and instantly get the right numbers for their area.
@@ -42,6 +42,44 @@ The application uses two primary JSON files for data management:
   - Availability information
   - Active status tracking
 
+### JSON Schema Integration
+
+JSON schemas are available in the `schemas/` directory to provide IDE support with autocomplete, validation, and inline error detection when editing data files.
+
+#### VS Code Setup
+
+Add schema to Workspace Settings in `.vscode/settings.json`:
+
+```json
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["public/data/hotlines.json"],
+      "url": "./schemas/hotlines.schema.json"
+    },
+    {
+      "fileMatch": ["public/data/metadata.json"],
+      "url": "./schemas/metadata.schema.json"
+    }
+  ]
+}
+```
+
+#### JetBrains IDEs Setup (WebStorm, IntelliJ IDEA)
+
+1. Open **Preferences/Settings** → **Languages & Frameworks** → **Schemas and DTDs** → **JSON Schema Mappings**
+2. Click the **+** button to add a new mapping
+3. For **hotlines.json**:
+   - Name: `Hotlines Schema`
+   - Schema file or URL: Browse to `schemas/hotlines.schema.json`
+   - Schema version: `JSON Schema version 7`
+   - Add file path pattern: `public/data/hotlines.json`
+4. Repeat for **metadata.json**:
+   - Name: `Hotlines Metadata Schema`
+   - Schema file or URL: Browse to `schemas/metadata.schema.json`
+   - Schema version: `JSON Schema version 7`
+   - Add file path pattern: `public/data/metadata.json`
+
 ## Tech Stack
 
 - Next.js 15 (App Router)
@@ -68,7 +106,7 @@ The app implements a robust offline-first approach:
 1. Clone the repository
 
 ```bash
-git clone https://github.com/waffensultan/hotlines-bettergov.git
+git clone https://github.com/bettergovph/hotlines.git
 cd hotlines-bettergov
 ```
 
@@ -102,8 +140,8 @@ Contributions are welcome! The data structure makes it easy to add or update hot
 
 ## Contributors
 
-<a href="https://github.com/waffensultan/hotlines-bettergov/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=waffensultan/hotlines-bettergov" />
+<a href="https://github.com/bettergovph/hotlines/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=bettergovph/hotlines" />
 </a>
 
 ## BetterGov
