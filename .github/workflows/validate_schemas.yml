@@ -8,7 +8,7 @@ on:
       - 'public/data/hotlines.json'
       - 'public/data/metadata.json'
       - 'schemas/**'
-      - 'scripts/validate_schemas.py'
+      - 'scripts/validate-json-schema.js'
   pull_request:
     branches:
       - main
@@ -17,25 +17,41 @@ on:
       - 'public/data/hotlines.json'
       - 'public/data/metadata.json'
       - 'schemas/**'
-      - 'scripts/validate_schemas.py'
+      - 'scripts/validate-json-schema.js'
   workflow_dispatch: # allow manual trigger
 
+permissions:
+  contents: read
+
 jobs:
-  validate:
-    name: Validate JSON data against schemas
+  validate-json-schema:
+    name: Validate JSON files against schemas
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@85856786d1ce8acfbcc2f13a5f3fbd6b938f9f41 # v7.1.2
+      - name: Setup Node.js
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
-          enable-cache: true
+          node-version-file: '.nvmrc'
+          cache: 'npm'
 
-      - name: Validate JSON schemas
-        run: uv run scripts/validate_schemas.py
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate hotlines
+        run: |
+          node scripts/validate-json-schema.js \
+            schemas/hotlines.schema.json \
+            public/data/hotlines.json
+
+      - name: Validate metadata
+        run: |
+          node scripts/validate-json-schema.js \
+            schemas/metadata.schema.json \
+            public/data/metadata.json
 
       - name: Report validation status
         if: success()
