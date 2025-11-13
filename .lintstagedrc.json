@@ -1,4 +1,10 @@
 {
   "*.{js,jsx,ts,tsx,cjs,mjs}": ["eslint --fix", "prettier --write"],
-  "*.{json,md,yml,yaml,css,scss,html}": ["prettier --write"]
+  "*.{json,md,yml,yaml,css,scss,html}": ["prettier --write"],
+  "public/data/hotlines.json": [
+    "node scripts/validate-json-schema.js schemas/hotlines.schema.json public/data/hotlines.json"
+  ],
+  "public/data/metadata.json": [
+    "node scripts/validate-json-schema.js schemas/metadata.schema.json public/data/metadata.json"
+  ]
 }
