@@ -80,6 +80,30 @@ Add schema to Workspace Settings in `.vscode/settings.json`:
    - Schema version: `JSON Schema version 7`
    - Add file path pattern: `public/data/metadata.json`
 
+#### Running Validation Locally
+
+To validate JSON files against a schema:
+
+```sh
+node scripts/validate-json-schema.js <schema-path> <files-pattern>
+```
+
+**Examples:**
+
+```sh
+# Validate hotlines
+node scripts/validate-json-schema.js src/schemas/hotlines.schema.json public/data/hotlines.json
+
+# Validate metadata
+node scripts/validate-json-schema.js src/schemas/metadata.schema.json public/data/metadata.json
+```
+
+Schema validation runs automatically in CI/CD when changes are made to:
+
+- JSON data files (`public/data/*.json`)
+- Schema files (`schemas/*.json`)
+- The validation script (`scripts/validate-json-schema.js`)
+
 ## Tech Stack
 
 - Next.js 15 (App Router)
