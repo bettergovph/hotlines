@@ -1,6 +1,7 @@
 import { defaultCache } from '@serwist/next/worker';
 import type { PrecacheEntry, SerwistGlobalConfig } from 'serwist';
 import { Serwist, StaleWhileRevalidate } from 'serwist';
+import precacheManifest from '../../precache-manifest.json';
 
 declare global {
   interface WorkerGlobalScope extends SerwistGlobalConfig {
@@ -35,9 +36,12 @@ const serwist = new Serwist({
 });
 
 serwist.addToPrecacheList([
-  { url: '/data/metadata.json', revision: '1' },
-  { url: '/data/hotlines.json', revision: '1' },
-  { url: '/bettergov-horizontal-logo.png', revision: '1' },
+  { url: '/data/metadata.json', revision: precacheManifest['/data/metadata.json'] },
+  { url: '/data/hotlines.json', revision: precacheManifest['/data/hotlines.json'] },
+  {
+    url: '/bettergov-horizontal-logo.png',
+    revision: precacheManifest['/bettergov-horizontal-logo.png'],
+  },
 ]);
 
 serwist.addEventListeners();
