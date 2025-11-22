@@ -31,22 +31,46 @@ import {
   Phone,
   PhoneIcon,
   SearchIcon,
+  XIcon,
 } from 'lucide-react';
+
+// Conditional logging utility for debugging (only in development)
+const debugLog = (...args: unknown[]) => {
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[HotlineApp]', ...args);
+  }
+};
+
+// String normalization utility for consistent comparisons
+const normalizeString = (str: string): string => str.toLowerCase().trim();
 
 const HomeContent = () => {
   const [metadata, setMetadata] = useState<IMetadataResponse | null>();
   const [hotlines, setHotlines] = useState<IHotlinesResponse | null>();
   const [isDetectingLocation, setIsDetectingLocation] = useState(true);
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   const [filterOptions, setFilterOptions] = useState<{
+    region: string;
+    province: string;
     city: string;
     category: string;
   }>({
+    region: '',
+    province: '',
     city: '',
     category: 'All Hotlines', // default
   });
 
+  const [regionSelectOpen, setRegionSelectOpen] = useState(false);
+  const [provinceSelectOpen, setProvinceSelectOpen] = useState(false);
   const [citySelectOpen, setCitySelectOpen] = useState(false);
+
+  // Helper function to update location filters and localStorage
+  const updateLocation = (location: { region: string; province: string; city: string }) => {
+    setFilterOptions(prev => ({ ...prev, ...location }));
+    localStorage.setItem('lastSavedLocation', JSON.stringify(location));
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -83,26 +107,77 @@ const HomeContent = () => {
     const detectLocation = () => {
       const getCoords = (): Promise<GeolocationPosition> => {
         return new Promise((resolve, reject) => {
+          if (!navigator.geolocation) {
+            const error = new Error('Geolocation is not supported by your browser');
+            setLocationError('Your browser does not support location detection');
+            reject(error);
+            return;
+          }
+
           navigator.geolocation.getCurrentPosition(
             resolve,
             error => {
-              console.error('Geolocation error:', error);
+              // Handle different geolocation errors with user-friendly messages
+              let errorMessage = 'Could not detect your location';
+
+              if (error.code === error.PERMISSION_DENIED) {
+                errorMessage =
+                  'Location access was denied. Enable location permissions to show hotlines for your current location.';
+              } else if (error.code === error.POSITION_UNAVAILABLE) {
+                errorMessage = 'Location information is unavailable.';
+              } else if (error.code === error.TIMEOUT) {
+                errorMessage = 'Location request timed out.';
+              }
+
+              setLocationError(errorMessage);
+              debugLog('Geolocation error:', error.code, error.message);
               reject(error);
             },
             {
               enableHighAccuracy: true,
-              timeout: 10000,
+              timeout: 10_000,
             }
           );
         });
+      };
+
+      // Helper to get default location from metadata (first region -> province -> city)
+      const getDefaultLocation = () => {
+        const defaultRegion = metadata.metadata.regions[0].name;
+        const defaultProvince = metadata.metadata.regions[0].provinces[0].province;
+        const defaultCity = metadata.metadata.regions[0].provinces[0].cities[0];
+        return {
+          region: normalizeString(defaultRegion),
+          province: normalizeString(defaultProvince),
+          city: normalizeString(`${defaultCity}|${defaultProvince}`),
+        };
+      };
+
+      // Helper to find location from metadata
+      const findLocationInMetadata = (cityName: string) => {
+        const normalizedCity = normalizeString(cityName);
+
+        for (const region of metadata.metadata.regions) {
+          for (const province of region.provinces) {
+            const cityMatch = province.cities.find(c => normalizeString(c) === normalizedCity);
+
+            if (cityMatch) {
+              return {
+                region: normalizeString(region.name),
+                province: normalizeString(province.province),
+                city: normalizeString(`${cityMatch}|${province.province}`),
+              };
+            }
+          }
+        }
+        return null;
       };
 
       const getLocation = async () => {
         try {
           const location = await getCoords();
           const { longitude, latitude } = location.coords;
-
-          console.log('Coords:', { latitude, longitude });
+          debugLog('Geolocation coords:', { latitude, longitude });
 
           const response = await fetch(
             `/api/reverse-geocode?latitude=${latitude}&longitude=${longitude}`
@@ -113,49 +188,41 @@ const HomeContent = () => {
           }
 
           const data = await response.json();
-          const city = data.city;
+          debugLog('Detected city:', data.city);
 
-          // Find the city and its province in metadata (case-insensitive)
-          const foundProvince = metadata.metadata.regions
-            .flatMap(region => region.provinces)
-            .find(province => province.cities.some(c => c.toLowerCase() === city.toLowerCase()));
+          const matchedLocation = findLocationInMetadata(data.city);
 
-          // Get the actual city name from metadata (preserves original casing)
-          const actualCity = foundProvince?.cities.find(
-            c => c.toLowerCase() === city.toLowerCase()
-          );
-
-          const foundCityValue =
-            foundProvince && actualCity
-              ? `${actualCity}|${foundProvince.province}`.toLowerCase()
-              : null;
-
-          console.log('Metadata:', metadata);
-          console.log('City:', city);
-          console.log('Found city value:', foundCityValue);
-
-          if (foundCityValue) {
-            localStorage.setItem('lastSavedLocation', foundCityValue);
-            console.log('City:', city);
-            console.log('Saved location!');
-
-            setFilterOptions(prev => ({
-              ...prev,
-              city: foundCityValue,
-            }));
+          if (matchedLocation) {
+            debugLog('Location detected and matched:', matchedLocation);
+            updateLocation(matchedLocation);
+          } else {
+            debugLog('City not found in metadata, using defaults');
+            updateLocation(getDefaultLocation());
           }
 
           setIsDetectingLocation(false);
         } catch (err) {
-          console.error('Error detecting location:', err);
+          debugLog('Geolocation failed:', err);
 
-          // Offline/denied
+          // Try to load from localStorage
           const stored = localStorage.getItem('lastSavedLocation');
           if (stored) {
-            setFilterOptions(prev => ({
-              ...prev,
-              city: stored.toLowerCase(),
-            }));
+            try {
+              const locationData = JSON.parse(stored);
+              debugLog('Loaded location from localStorage (new format):', locationData);
+              setFilterOptions(prev => ({
+                ...prev,
+                region: locationData.region || '',
+                province: locationData.province || '',
+                city: locationData.city || '',
+              }));
+            } catch {
+              debugLog('Loaded location from localStorage (legacy format):', stored);
+              setFilterOptions(prev => ({ ...prev, city: normalizeString(stored) }));
+            }
+          } else {
+            debugLog('No stored location, using defaults');
+            updateLocation(getDefaultLocation());
           }
 
           setIsDetectingLocation(false);
@@ -166,39 +233,201 @@ const HomeContent = () => {
     };
 
     detectLocation();
-
-    // Set default city in city|province format (lowercase for consistency)
-    const defaultCity = metadata.metadata.regions[0].provinces[0].cities[0];
-    const defaultProvince = metadata.metadata.regions[0].provinces[0].province;
-    setFilterOptions(prev => ({
-      ...prev,
-      city: `${defaultCity}|${defaultProvince}`.toLowerCase(),
-    }));
   }, [metadata]);
 
+  type RegionFilter = {
+    name: string;
+    key: string; // case-insensitive for matching
+  };
+
+  type ProvinceFilter = {
+    name: string;
+    regionName: string;
+    key: string; // case-insensitive for matching
+  };
+
   type LocationFilter = {
+    region: string;
     province: string;
     city: string;
     key: string; // format: "city|province"
     displayName: string; // format: "city (province)"
   };
 
-  // Build city list with province always appended
+  // Build region list
+  const regionFilters: RegionFilter[] = useMemo(() => {
+    if (!metadata) {
+      return [];
+    }
+    return metadata.metadata.regions.map(region => ({
+      name: region.name,
+      key: normalizeString(region.name),
+    }));
+  }, [metadata]);
+
+  // Build province list - filter by region if selected, otherwise show all
+  const provinceFilters: ProvinceFilter[] = useMemo(() => {
+    if (!metadata) {
+      return [];
+    }
+
+    const allProvinces = metadata.metadata.regions.flatMap(region =>
+      region.provinces.map(province => ({
+        name: province.province,
+        regionName: region.name,
+        key: normalizeString(province.province),
+      }))
+    );
+
+    // Filter by selected region if one is selected
+    if (filterOptions.region) {
+      return allProvinces.filter(
+        p => normalizeString(p.regionName) === normalizeString(filterOptions.region)
+      );
+    }
+
+    return allProvinces;
+  }, [metadata, filterOptions.region]);
+
+  // Build city list - filter by province or region if selected, otherwise show all
   const locationFilters: LocationFilter[] = useMemo(() => {
     if (!metadata) {
       return [];
     }
-    return metadata.metadata.regions
-      .flatMap(region => region.provinces)
-      .flatMap(province =>
-        province.cities.map(city => ({
+
+    const allCities = metadata.metadata.regions
+      .flatMap(region =>
+        region.provinces.map(province => ({
+          region: region.name,
           province: province.province,
+          cities: province.cities,
+        }))
+      )
+      .flatMap(data =>
+        data.cities.map(city => ({
+          region: data.region,
+          province: data.province,
           city,
-          key: `${city}|${province.province}`.toLowerCase(),
-          displayName: `${city} (${province.province})`,
+          key: normalizeString(`${city}|${data.province}`),
+          displayName: `${city} (${data.province})`,
         }))
       );
+
+    // Filter by selected province if one is selected
+    if (filterOptions.province) {
+      return allCities.filter(
+        c => normalizeString(c.province) === normalizeString(filterOptions.province)
+      );
+    }
+
+    // Filter by selected region if one is selected (but no province)
+    if (filterOptions.region) {
+      return allCities.filter(
+        c => normalizeString(c.region) === normalizeString(filterOptions.region)
+      );
+    }
+
+    return allCities;
+  }, [metadata, filterOptions.region, filterOptions.province]);
+
+  // Build lookup maps for efficient province→region and city→province mappings
+  const provinceToRegionMap = useMemo(() => {
+    const map = new Map<string, string>();
+    if (!metadata) {
+      return map;
+    }
+
+    metadata.metadata.regions.forEach(region => {
+      region.provinces.forEach(province => {
+        map.set(normalizeString(province.province), normalizeString(region.name));
+      });
+    });
+
+    return map;
   }, [metadata]);
+
+  const cityToLocationMap = useMemo(() => {
+    const map = new Map<string, { region: string; province: string }>();
+    if (!metadata) {
+      return map;
+    }
+
+    metadata.metadata.regions.forEach(region => {
+      region.provinces.forEach(province => {
+        province.cities.forEach(city => {
+          const cityKey = normalizeString(`${city}|${province.province}`);
+          map.set(cityKey, {
+            region: normalizeString(region.name),
+            province: normalizeString(province.province),
+          });
+        });
+      });
+    });
+
+    return map;
+  }, [metadata]);
+
+  const handleRegionChange = (regionKey: string) => {
+    updateLocation({
+      region: regionKey,
+      province: '',
+      city: '',
+    });
+    setRegionSelectOpen(false);
+  };
+
+  const handleProvinceChange = (provinceKey: string) => {
+    const foundRegion = provinceToRegionMap.get(provinceKey) || '';
+
+    updateLocation({
+      region: foundRegion,
+      province: provinceKey,
+      city: '',
+    });
+    setProvinceSelectOpen(false);
+  };
+
+  const handleCityChange = (cityKey: string) => {
+    const locationData = cityToLocationMap.get(cityKey);
+    if (!locationData) {
+      setCitySelectOpen(false);
+      return;
+    }
+
+    updateLocation({
+      region: locationData.region,
+      province: locationData.province,
+      city: cityKey,
+    });
+    setCitySelectOpen(false);
+  };
+
+  const handleClearRegion = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    updateLocation({
+      region: '',
+      province: '',
+      city: '',
+    });
+  };
+
+  const handleClearProvince = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    updateLocation({
+      region: filterOptions.region,
+      province: '',
+      city: '',
+    });
+  };
+
+  const handleClearCity = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    updateLocation({
+      region: filterOptions.region,
+      province: filterOptions.province,
+      city: '',
+    });
+  };
 
   if (!hotlines || !metadata || isDetectingLocation) {
     return (
@@ -221,18 +450,36 @@ const HomeContent = () => {
     return { city: filterValue };
   };
 
-  const locationFromFilter = extractLocationFromFilter(filterOptions.city);
+  // Apply hierarchical filtering: region -> province -> city
   let selectedHotlines = hotlines.hotlines.filter(hotline => {
-    if (locationFromFilter.province) {
-      // Match both city and province (case-insensitive)
-      return (
-        hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase() &&
-        hotline.province.toLowerCase() === locationFromFilter.province.toLowerCase()
-      );
-    } else {
-      // Legacy: match city only (for backward compatibility, case-insensitive)
-      return hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase();
+    if (filterOptions.region) {
+      if (normalizeString(hotline.regionName) !== normalizeString(filterOptions.region)) {
+        return false;
+      }
     }
+
+    if (filterOptions.province) {
+      if (normalizeString(hotline.province) !== normalizeString(filterOptions.province)) {
+        return false;
+      }
+    }
+
+    if (filterOptions.city) {
+      const locationFromFilter = extractLocationFromFilter(filterOptions.city);
+      if (locationFromFilter.province) {
+        // Match both city and province (case-insensitive, trimmed)
+        return (
+          normalizeString(hotline.city) === normalizeString(locationFromFilter.city) &&
+          normalizeString(hotline.province) === normalizeString(locationFromFilter.province)
+        );
+      } else {
+        // Legacy: match city only (for backward compatibility, case-insensitive, trimmed)
+        return normalizeString(hotline.city) === normalizeString(locationFromFilter.city);
+      }
+    }
+
+    // If no location filter selected, show all hotlines
+    return true;
   });
 
   const hotlineTypeMap: Record<string, THotlineCategory[]> = {
@@ -276,61 +523,228 @@ const HomeContent = () => {
         <Image height={200} width={200} src={logo2} alt="Logo" />
       </div>
 
-      {/* FITERING OPTIONS */}
-      <div className="flex flex-col gap-2 w-full px-3 pb-3 max-w-2xl">
-        <Popover open={citySelectOpen} onOpenChange={setCitySelectOpen}>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              size="lg"
-              role="combobox"
-              aria-expanded={citySelectOpen}
-              className="w-full justify-between rounded-full"
+      {/* LOCATION ERROR MESSAGE */}
+      {locationError && (
+        <div className="w-full max-w-2xl px-4 pb-3">
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 flex items-start gap-2">
+            <CircleAlertIcon className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <p className="text-sm text-amber-800">{locationError}</p>
+              <p className="text-xs text-amber-700 mt-1">
+                You can manually select your location below.
+              </p>
+            </div>
+            <button
+              onClick={() => setLocationError(null)}
+              className="text-amber-600 hover:text-amber-800"
+              aria-label="Dismiss"
             >
-              {filterOptions.city !== ''
-                ? locationFilters.find(
-                    c => c.key.toLowerCase() === filterOptions.city.toLowerCase()
-                  )?.displayName || locationFromFilter.city
-                : 'Select City'}
-              <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
-            <Command>
-              <CommandInput placeholder="Search cities or municipalities..." />
-              <CommandList>
-                <CommandEmpty>No city found.</CommandEmpty>
-                <CommandGroup>
-                  {locationFilters.map(cityData => (
-                    <CommandItem
-                      key={cityData.key}
-                      value={cityData.displayName}
-                      onSelect={() => {
-                        setFilterOptions(prev => ({
-                          ...prev,
-                          city: cityData.key,
-                        }));
-                        setCitySelectOpen(false);
-                        localStorage.setItem('lastSavedLocation', cityData.key);
-                      }}
+              <XIcon className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* FILTERING OPTIONS */}
+      <div className="flex flex-col sm:flex-row gap-3 w-full px-4 pb-3 max-w-2xl">
+        {/* Region Selector */}
+        <div className="flex-1 min-w-[140px]">
+          <label className="text-sm font-semibold text-gray-800 mb-2 block ml-[5px]">Region</label>
+          <Popover open={regionSelectOpen} onOpenChange={setRegionSelectOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                role="combobox"
+                aria-expanded={regionSelectOpen}
+                className="w-full justify-between rounded-full h-9 text-xs"
+              >
+                <span className="truncate">
+                  {filterOptions.region !== ''
+                    ? regionFilters.find(r => r.key === filterOptions.region)?.name ||
+                      'Select Region'
+                    : 'Select Region'}
+                </span>
+                <div className="flex items-center ml-1 gap-0.5">
+                  {filterOptions.region && (
+                    <div
+                      className="h-4 w-4 shrink-0 rounded-sm hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+                      onClick={handleClearRegion}
                     >
-                      <CheckIcon
-                        className={cn(
-                          'mr-2 h-4 w-4',
-                          filterOptions.city.toLowerCase() === cityData.key.toLowerCase()
-                            ? 'opacity-100'
-                            : 'opacity-0'
-                        )}
-                      />
-                      {cityData.displayName}
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              </CommandList>
-            </Command>
-          </PopoverContent>
-        </Popover>
+                      <XIcon className="h-3 w-3 opacity-70" />
+                    </div>
+                  )}
+                  <ChevronsUpDownIcon className="h-3.5 w-3.5 shrink-0 opacity-50" />
+                </div>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+              <Command>
+                <CommandInput placeholder="Search regions..." />
+                <CommandList>
+                  <CommandEmpty>No region found.</CommandEmpty>
+                  <CommandGroup>
+                    {regionFilters.map(regionData => (
+                      <CommandItem
+                        key={regionData.key}
+                        value={regionData.name}
+                        onSelect={() => handleRegionChange(regionData.key)}
+                      >
+                        <CheckIcon
+                          className={cn(
+                            'mr-2 h-4 w-4',
+                            filterOptions.region === regionData.key ? 'opacity-100' : 'opacity-0'
+                          )}
+                        />
+                        {regionData.name}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
+        </div>
+
+        {/* Province Selector */}
+        <div className="flex-1 min-w-[140px]">
+          <label className="text-sm font-semibold text-gray-800 mb-2 block ml-[5px]">
+            Province
+          </label>
+          <Popover open={provinceSelectOpen} onOpenChange={setProvinceSelectOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                role="combobox"
+                aria-expanded={provinceSelectOpen}
+                className="w-full justify-between rounded-full h-9 text-xs"
+              >
+                <span className="truncate">
+                  {filterOptions.province !== ''
+                    ? provinceFilters.find(p => p.key === filterOptions.province)?.name ||
+                      'Select Province'
+                    : 'Select Province'}
+                </span>
+                <div className="flex items-center ml-1 gap-0.5">
+                  {filterOptions.province && (
+                    <div
+                      className="h-4 w-4 shrink-0 rounded-sm hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+                      onClick={handleClearProvince}
+                    >
+                      <XIcon className="h-3 w-3 opacity-70" />
+                    </div>
+                  )}
+                  <ChevronsUpDownIcon className="h-3.5 w-3.5 shrink-0 opacity-50" />
+                </div>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+              <Command>
+                <CommandInput placeholder="Search provinces..." />
+                <CommandList>
+                  <CommandEmpty>No province found.</CommandEmpty>
+                  <CommandGroup>
+                    {provinceFilters.map(provinceData => (
+                      <CommandItem
+                        key={provinceData.key}
+                        value={provinceData.name}
+                        onSelect={() => handleProvinceChange(provinceData.key)}
+                      >
+                        <CheckIcon
+                          className={cn(
+                            'mr-2 h-4 w-4',
+                            filterOptions.province === provinceData.key
+                              ? 'opacity-100'
+                              : 'opacity-0'
+                          )}
+                        />
+                        {provinceData.name}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
+        </div>
+
+        {/* City Selector */}
+        <div className="flex-1 min-w-[140px]">
+          <label className="text-sm font-semibold text-gray-800 mb-2 block ml-[5px]">City</label>
+          <Popover open={citySelectOpen} onOpenChange={setCitySelectOpen}>
+            <PopoverTrigger asChild>
+              <Button
+                variant="outline"
+                size="sm"
+                role="combobox"
+                aria-expanded={citySelectOpen}
+                className="w-full justify-between rounded-full h-9 text-xs"
+              >
+                <span className="truncate">
+                  {filterOptions.city !== ''
+                    ? locationFilters.find(c => c.key === normalizeString(filterOptions.city))
+                        ?.displayName || 'Select City'
+                    : 'Select City'}
+                </span>
+                <div className="flex items-center ml-1 gap-0.5">
+                  {filterOptions.city && (
+                    <div
+                      className="h-4 w-4 shrink-0 rounded-sm hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+                      onClick={handleClearCity}
+                    >
+                      <XIcon className="h-3 w-3 opacity-70" />
+                    </div>
+                  )}
+                  <ChevronsUpDownIcon className="h-3.5 w-3.5 shrink-0 opacity-50" />
+                </div>
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+              <Command>
+                <CommandInput placeholder="Search cities or municipalities..." />
+                <CommandList>
+                  <CommandEmpty>No city found.</CommandEmpty>
+                  <CommandGroup>
+                    {locationFilters.map(cityData => (
+                      <CommandItem
+                        key={cityData.key}
+                        value={cityData.displayName}
+                        onSelect={() => handleCityChange(cityData.key)}
+                      >
+                        <CheckIcon
+                          className={cn(
+                            'mr-2 h-4 w-4',
+                            normalizeString(filterOptions.city) === cityData.key
+                              ? 'opacity-100'
+                              : 'opacity-0'
+                          )}
+                        />
+                        {cityData.displayName}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
+        </div>
       </div>
+
+      {/* LOCATION SCOPE INDICATOR */}
+      {!filterOptions.region && !filterOptions.province && !filterOptions.city && (
+        <div className="w-full max-w-2xl px-4 pb-3">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-2.5 flex items-center gap-2">
+            <PhoneIcon className="h-4 w-4 text-blue-600 shrink-0" />
+            <p className="text-xs text-blue-800">
+              Showing{' '}
+              <span className="font-semibold">{sortedSelectedHotlines.length} hotlines</span> from{' '}
+              <span className="font-semibold">all locations nationwide</span>. Select a location
+              above to filter.
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="flex flex-col justify-center items-center gap-2 w-full overflow-x-auto scrollbar-hide">
         <div className="flex w-full flex-row gap-2 pb-3 px-4 md:justify-center">
@@ -437,7 +851,7 @@ const HomeContent = () => {
               </button>
             </div>
 
-            <p className="text-muted-foreground text-gray-500 mt-6">
+            <p className="text-gray-500 mt-6">
               Need immediate assistance? Call{' '}
               <span className="font-semibold text-gray-700">911</span> for emergencies.
             </p>

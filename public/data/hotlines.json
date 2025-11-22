@@ -84,7 +84,7 @@
     {
       "hotlineName": "Pnp Crime Laboratory Tipanoy",
       "hotlineNumber": "221-0499",
-      "regionName": "Region X - Northern Mindanao ",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
@@ -219,7 +219,7 @@
     {
       "hotlineName": "St. Anthony Maternity's and Child",
       "hotlineNumber": "221-5748",
-      "regionName": "Region X - Northern Min danao",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
@@ -228,7 +228,7 @@
     {
       "hotlineName": "Mercy Community Hospitals Inc.",
       "hotlineNumber": "221-8374",
-      "regionName": "Region X - Northern Mindan ao",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
@@ -2435,7 +2435,7 @@
     {
       "hotlineName": "Municipal Disaster Risk Reduction and Management Office (MDRRMO)",
       "hotlineNumber": "09476198376",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Ma-ayon",
       "category": "government_hotlines",
@@ -2444,7 +2444,7 @@
     {
       "hotlineName": "Ma-ayon Fire Station",
       "hotlineNumber": "09203916411",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Ma-ayon",
       "category": "fire_hotlines",
@@ -2453,7 +2453,7 @@
     {
       "hotlineName": "Ma-ayon Police Station",
       "hotlineNumber": "09985986165",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Ma-ayon",
       "category": "police_hotlines",
@@ -2462,7 +2462,7 @@
     {
       "hotlineName": "Roxas City Emergency Response Team",
       "hotlineNumber": "09124722669",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "government_hotlines",
@@ -2471,7 +2471,7 @@
     {
       "hotlineName": "Roxas City Emergency Operation Center",
       "hotlineNumber": "0365201086",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "government_hotlines",
@@ -2480,7 +2480,7 @@
     {
       "hotlineName": "Roxas Memorial Provincial Hospital",
       "hotlineNumber": "0366210823",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "medical_hotlines",
@@ -2489,7 +2489,7 @@
     {
       "hotlineName": "Roxas City Health Office",
       "hotlineNumber": "0366215686",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "medical_hotlines",
@@ -2498,7 +2498,7 @@
     {
       "hotlineName": "Philippine Red Cross Roxas City Chapter",
       "hotlineNumber": "0366211125",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "medical_hotlines",
@@ -2507,7 +2507,7 @@
     {
       "hotlineName": "Capiz Emergency Response Team",
       "hotlineNumber": "0365201203",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "government_hotlines",
@@ -2516,7 +2516,7 @@
     {
       "hotlineName": "Roxas City Bureau of Fire Protection",
       "hotlineNumber": "0366210221",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "fire_hotlines",
@@ -2525,7 +2525,7 @@
     {
       "hotlineName": "Roxas City Police",
       "hotlineNumber": "0366200284",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "police_hotlines",
@@ -2534,7 +2534,7 @@
     {
       "hotlineName": "CACAG (Capiz Citizens Action Group Inc.)",
       "hotlineNumber": "0366211221",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "fire_hotlines",
@@ -2543,7 +2543,7 @@
     {
       "hotlineName": "Coast Guard Station Capiz",
       "hotlineNumber": "09638008443",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "government_hotlines",
@@ -2552,7 +2552,7 @@
     {
       "hotlineName": "Federation Roxas City Fire and Rescue Volunteers",
       "hotlineNumber": "09127350573",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "fire_hotlines",
@@ -2561,7 +2561,7 @@
     {
       "hotlineName": "Metro Roxas Water District",
       "hotlineNumber": "0366210044",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "utility_hotlines",
@@ -2570,7 +2570,7 @@
     {
       "hotlineName": "CAPELCO (Capiz Electric Cooperative Inc.)",
       "hotlineNumber": "0366204930",
-      "regionName": "Region VI",
+      "regionName": "Region VI - Western Visayas",
       "province": "Capiz",
       "city": "Roxas",
       "category": "utility_hotlines",
@@ -2579,7 +2579,7 @@
     {
       "hotlineName": "Emergency Rescue Unit Foundation",
       "hotlineNumber": "161",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2588,7 +2588,7 @@
     {
       "hotlineName": "Bureau of Fire Protection",
       "hotlineNumber": "160",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "fire_hotlines",
@@ -2597,7 +2597,7 @@
     {
       "hotlineName": "Police",
       "hotlineNumber": "166",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "police_hotlines",
@@ -2613,7 +2613,7 @@
     {
       "hotlineName": "Chong Hua Hospital",
       "hotlineNumber": "0322558000",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2622,7 +2622,7 @@
     {
       "hotlineName": "Cebu Doctors' Hospital",
       "hotlineNumber": "0322555555",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2631,7 +2631,7 @@
     {
       "hotlineName": "Perpetual Succour Hospital",
       "hotlineNumber": "0322338620",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2640,7 +2640,7 @@
     {
       "hotlineName": "Velez General Hospital",
       "hotlineNumber": "0322531871",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2649,7 +2649,7 @@
     {
       "hotlineName": "Cebu City Medical Center",
       "hotlineNumber": "0322557141",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2658,7 +2658,7 @@
     {
       "hotlineName": "Vicente Sotto Memorial Medical Center",
       "hotlineNumber": "0322551591",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2667,7 +2667,7 @@
     {
       "hotlineName": "Philippine National Red Cross (Cebu Chapter)",
       "hotlineNumber": "0322534611",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "medical_hotlines",
@@ -2676,7 +2676,7 @@
     {
       "hotlineName": "Traffic Operations Management",
       "hotlineNumber": "0322539211",
-      "regionName": "Region VII",
+      "regionName": "Region VII - Central Visayas",
       "province": "Cebu",
       "city": "Cebu City",
       "category": "utility_hotlines",
