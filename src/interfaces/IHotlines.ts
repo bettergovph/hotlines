@@ -8,6 +8,7 @@ export interface IHotline {
   regionName: string;
   province: string;
   city: string;
+  lastVerified: string;
   category: THotlineCategory;
   alternateNumbers: string[];
 }

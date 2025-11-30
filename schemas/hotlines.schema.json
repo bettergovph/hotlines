@@ -18,6 +18,7 @@
           "province",
           "city",
           "category",
+          "lastVerified",
           "alternateNumbers"
         ],
         "properties": {
@@ -58,6 +59,11 @@
               "government_hotlines"
             ],
             "description": "Type of emergency hotline"
+          },
+          "lastVerified": {
+            "type": "string",
+            "format": "date",
+            "description": "The date when the hotline information was last verified (YYYY-MM-DD)"
           },
           "alternateNumbers": {
             "type": "array",

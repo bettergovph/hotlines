@@ -19,6 +19,7 @@ type HotlineCardProps = {
   number: string;
   location?: string;
   province?: string;
+  lastVerified?: string;
   alternateNumbers: string[];
 };
 
@@ -28,6 +29,7 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
   number,
   location,
   province,
+  lastVerified,
   alternateNumbers,
 }) => {
   const [isAltNumModalOpen, setIsAltNumModalOpen] = useState(false);
@@ -81,11 +83,18 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
         <div className="flex flex-col">
           <div className="font-bold">{name}</div>
           <div className="flex flex-col gap-2">
-            {location && (
-              <div className="text-gray-700 text-xs text-neutral">
-                {province ? `${location} (${province})` : location}
-              </div>
-            )}
+            <div className="flex flex-row gap-4">
+              {location && (
+                <div className="text-gray-700 text-xs text-neutral">
+                  {province ? `${location} (${province})` : location}
+                </div>
+              )}
+              {lastVerified && (
+                <div className="text-gray-700 text-xs text-neutral">
+                  Last Verified: {new Date(lastVerified).toLocaleDateString()}
+                </div>
+              )}
+            </div>
 
             <div className="flex items-center gap-2 flex-wrap">
               <Button
