@@ -119,6 +119,15 @@
             "cities": ["Iligan City"]
           }
         ]
+      },
+      {
+        "name": "Region XI - Davao Region",
+        "provinces": [
+          {
+            "province": "Davao del Norte",
+            "cities": ["Tagum City"]
+          }
+        ]
       }
     ],
     "categories": [
