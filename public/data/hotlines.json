@@ -2726,6 +2726,96 @@
       "city": "Parañaque",
       "category": "utility_hotlines",
       "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Los Baños Municipal Action Center",
+      "hotlineNumber": "0495302953",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09267170718"]
+    },
+    {
+      "hotlineName": "Los Baños Municipal Disaster Risk Reduction and Management Office",
+      "hotlineNumber": "09772049641",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Los Baños Fire Station",
+      "hotlineNumber": "09394325837",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["0495367965"]
+    },
+    {
+      "hotlineName": "Los Baños PNP",
+      "hotlineNumber": "0495302954",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "police_hotlines",
+      "alternateNumbers": ["09985985649", "09275091198"]
+    },
+    {
+      "hotlineName": "Laguna Aquatech (formerly LARC)",
+      "hotlineNumber": "09985853723",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["09190616163"]
+    },
+    {
+      "hotlineName": "St. Jude Family Hospital",
+      "hotlineNumber": "0495361232",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0495361982"]
+    },
+    {
+      "hotlineName": "Healthserv Los Baños Medical Center",
+      "hotlineNumber": "09173016646",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0495364858", "09178133257"]
+    },
+    {
+      "hotlineName": "Los Baños Doctors Hospital",
+      "hotlineNumber": "0495360100",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09063992757"]
+    },
+    {
+      "hotlineName": "UPLB University Health Service",
+      "hotlineNumber": "0495366238",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09983466070", "09217865285", "09158022211", "09662242377"]
+    },
+    {
+      "hotlineName": "UPLB Security and Safety Office",
+      "hotlineNumber": "09060433288",
+      "regionName": "Region IV-A",
+      "province": "Laguna",
+      "city": "Los Baños",
+      "category": "police_hotlines",
+      "alternateNumbers": ["09218901259"]
     }
   ]
 }
