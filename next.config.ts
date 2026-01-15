@@ -51,7 +51,6 @@ const withSerwist = withSerwistInit({
   swSrc: 'src/app/sw.ts',
   swDest: 'public/sw.js',
   cacheOnNavigation: true,
-  additionalPrecacheEntries: [{ url: '/', revision: '1' }],
   disable: process.env.NODE_ENV !== 'production',
 });
 

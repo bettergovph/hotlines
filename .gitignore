@@ -44,6 +44,11 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# build-generated files
+precache-manifest.json
+public/sw.js
+public/swe-worker*.js
+
 # IDE
 .idea/
 .vscode/
