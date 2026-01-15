@@ -66,9 +66,7 @@
           },
           {
             "province": "Laguna",
-            "cities": ["San Pablo",
-              "Los Baños"
-            ]
+            "cities": ["San Pablo", "Los Baños"]
           },
           {
             "province": "Quezon",
