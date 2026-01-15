@@ -1,6 +1,159 @@
 {
   "hotlines": [
     {
+      "hotlineName": "Aquino Medical Specialists Hospital, Inc.",
+      "hotlineNumber": "0842162156",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09223692183"]
+    },
+    {
+      "hotlineName": "Davao Regional Medical Center - OPCEN",
+      "hotlineNumber": "09171044743",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0848297120", "200"]
+    },
+    {
+      "hotlineName": "Davao Regional Medical Center - RPNRU Refferal Lines",
+      "hotlineNumber": "09190967660",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0848297120", "210"]
+    },
+    {
+      "hotlineName": "Davao Regional Medical Center - HEDMU Office",
+      "hotlineNumber": "0848297120",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["253"]
+    },
+    {
+      "hotlineName": "Davao Regional Medical Center",
+      "hotlineNumber": "0848297120",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["09559801761", "09126417327"]
+    },
+    {
+      "hotlineName": "Medical Mission Group Hospital & Health Services Cooperative of Tagum",
+      "hotlineNumber": "0846556020",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["6556015", "6556009"]
+    },
+    {
+      "hotlineName": "Tagum Medical City",
+      "hotlineNumber": "09332047372",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "VITRUWASCO",
+      "hotlineNumber": "09264872188",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["0848225327"]
+    },
+    {
+      "hotlineName": "Tagum City Water District",
+      "hotlineNumber": "09639267303",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["09633419162"]
+    },
+    {
+      "hotlineName": "NORDECO (Northern Davao Electric Cooperative)",
+      "hotlineNumber": "09173763658",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["09955198727"]
+    },
+    {
+      "hotlineName": "Tagum City Traffic Management Unit",
+      "hotlineNumber": "09656570026",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "City Disaster Risk Reduction and Maintenance Office (CDRRMO) Providence Base",
+      "hotlineNumber": "09267171566",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "City Disaster Risk Reduction and Maintenance Office (CDRRMO) Rescue",
+      "hotlineNumber": "09275313199",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Tagum City Fire Station - La Filipina Sub-Station",
+      "hotlineNumber": "09369920576",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Tagum City Fire Station - Magugpo South Sub-Station",
+      "hotlineNumber": "09164619521",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Tagum City Fire Station - Central Station",
+      "hotlineNumber": "09267171538",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Tagum City Police Office",
+      "hotlineNumber": "09197485024",
+      "regionName": "Region XI - Davao Region",
+      "province": "Davao del Norte",
+      "city": "Tagum City",
+      "category": "police_hotlines",
+      "alternateNumbers": ["09674501815"]
+    },
+    {
       "hotlineName": "Iligan City Police Office",
       "hotlineNumber": "09177127411",
       "regionName": "Region X - Northern Mindanao",
