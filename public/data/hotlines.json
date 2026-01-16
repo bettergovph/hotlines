@@ -767,30 +767,39 @@
     },
     {
       "hotlineName": "General Trias Bureau of Fire Protection",
-      "hotlineNumber": "09175931522",
+      "hotlineNumber": "0967 429 0363",
       "regionName": "Region IV-A",
       "province": "Cavite",
       "city": "General Trias",
       "category": "fire_hotlines",
-      "alternateNumbers": ["0465137200", "4377625"]
-    },
-    {
-      "hotlineName": "General Trias Municipal Disaster Risk Reduction and Management Office",
-      "hotlineNumber": "09175968676",
-      "regionName": "Region IV-A",
-      "province": "Cavite",
-      "city": "General Trias",
-      "category": "government_hotlines",
-      "alternateNumbers": ["0465136986", "5095068"]
+      "alternateNumbers": ["0465137200", "4377625", "09175931522"]
     },
     {
       "hotlineName": "General Trias Philippine National Police",
-      "hotlineNumber": "09176223320",
+      "hotlineNumber": "09167265908",
       "regionName": "Region IV-A",
       "province": "Cavite",
       "city": "General Trias",
       "category": "police_hotlines",
-      "alternateNumbers": ["0465138600", "4377306"]
+      "alternateNumbers": ["0465138600", "4377306", "09176223320", "09985985612 (Smart)"]
+    },
+    {
+      "hotlineName": "General Trias City Disaster Risk Reduction and Management Office",
+      "hotlineNumber": "0919 077 1760",
+      "regionName": "Region IV-A",
+      "province": "Cavite",
+      "city": "General Trias",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0465136986", "5095068", "09175968676"]
+    },
+    {
+      "hotlineName": "Patient Transport Service",
+      "hotlineNumber": "0962 847 1505",
+      "regionName": "Region IV-A",
+      "province": "Cavite",
+      "city": "General Trias",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
     },
     {
       "hotlineName": "Amadeo Rescue",
