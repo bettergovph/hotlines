@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import logo2 from '/public/bettergov-horizontal-logo.png';
+import { useSearchParams } from 'next/navigation';
 
 import Image from 'next/image';
 import HotlineCard from '@/components/hotline-card';
@@ -37,6 +38,9 @@ const HomeContent = () => {
   const [metadata, setMetadata] = useState<IMetadataResponse | null>();
   const [hotlines, setHotlines] = useState<IHotlinesResponse | null>();
   const [isDetectingLocation, setIsDetectingLocation] = useState(true);
+
+  const searchParams = useSearchParams();
+  const cityFromURL = searchParams.get('city')?.toLowerCase();
 
   const [filterOptions, setFilterOptions] = useState<{
     city: string;
@@ -77,6 +81,16 @@ const HomeContent = () => {
 
   useEffect(() => {
     if (!metadata) {
+      return;
+    }
+
+    if (cityFromURL) {
+      setFilterOptions(prev => ({
+        ...prev,
+        city: cityFromURL,
+      }));
+      localStorage.setItem('lastSavedLocation', cityFromURL);
+      setIsDetectingLocation(false);
       return;
     }
 
