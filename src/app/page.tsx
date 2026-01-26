@@ -41,6 +41,7 @@ const HomeContent = () => {
 
   const searchParams = useSearchParams();
   const cityFromURL = searchParams.get('city')?.toLowerCase();
+  const provinceFromURL = searchParams.get('province')?.toLowerCase();
 
   const [filterOptions, setFilterOptions] = useState<{
     city: string;
@@ -85,11 +86,12 @@ const HomeContent = () => {
     }
 
     if (cityFromURL) {
+      const combinedURL = `${cityFromURL}|${provinceFromURL}`;
       setFilterOptions(prev => ({
         ...prev,
-        city: cityFromURL,
+        city: combinedURL,
       }));
-      localStorage.setItem('lastSavedLocation', cityFromURL);
+      localStorage.setItem('lastSavedLocation', combinedURL);
       setIsDetectingLocation(false);
       return;
     }
