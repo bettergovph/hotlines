@@ -2969,6 +2969,239 @@
       "city": "Los Baños",
       "category": "police_hotlines",
       "alternateNumbers": ["09218901259"]
+    },
+
+    {
+      "hotlineName": "PNP Marikina HQ",
+      "hotlineNumber": "84050091",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "OPSS (Public Safety & Security)",
+      "hotlineNumber": "6829572",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "police_hotlines",
+      "alternateNumbers": ["3699228"]
+    },
+    {
+      "hotlineName": "Barangka Police Precinct",
+      "hotlineNumber": "5088287",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Concepcion II Police Precinct",
+      "hotlineNumber": "9423618",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Central Fire Station",
+      "hotlineNumber": "6810233",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Malanday Fire Station",
+      "hotlineNumber": "9987412",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "IVC Fire Station",
+      "hotlineNumber": "4777003",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Nangka Fire Station",
+      "hotlineNumber": "5864397",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Concepcion Uno Fire Station",
+      "hotlineNumber": "7061663",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Parang Fire Station",
+      "hotlineNumber": "6362915",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Amang Rodriguez Memorial Medical Center",
+      "hotlineNumber": "9420055",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "City Health Office",
+      "hotlineNumber": "9971108",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["9422359"]
+    },
+    {
+      "hotlineName": "Animal Bite Treatment Center",
+      "hotlineNumber": "9971021",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Sanitation Section",
+      "hotlineNumber": "9422359",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "CEMO (Waste & Environment)",
+      "hotlineNumber": "86587849",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "utility_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Engineering Office",
+      "hotlineNumber": "89481201",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["9481202"]
+    },
+    {
+      "hotlineName": "CTMDO (Traffic & Transport)",
+      "hotlineNumber": "9481208",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "utility_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "City Veterinary Office",
+      "hotlineNumber": "4754719",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "utility_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Marikina Rescue 161",
+      "hotlineNumber": "161",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "police_hotlines",
+      "alternateNumbers": [
+        "86462436",
+        "86460427",
+        "71165532",
+        "09175842168",
+        "09285593341",
+        "09989970115"
+      ]
+    },
+    {
+      "hotlineName": "City Hall Trunkline",
+      "hotlineNumber": "86460462",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Mayor's Office",
+      "hotlineNumber": "86461634",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Treasury Office",
+      "hotlineNumber": "86829571",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": ["86461623"]
+    },
+    {
+      "hotlineName": "BPLO (Business Permits)",
+      "hotlineNumber": "82441800",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": ["86462354"]
+    },
+    {
+      "hotlineName": "DSWD (Social Welfare)",
+      "hotlineNumber": "3694132",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "OSCA (Senior Citizens)",
+      "hotlineNumber": "86591956",
+      "regionName": "National Capital Region",
+      "province": "Metro Manila",
+      "city": "Marikina",
+      "category": "government_hotlines",
+      "alternateNumbers": []
     }
   ]
 }
