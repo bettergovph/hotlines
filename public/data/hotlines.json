@@ -2969,6 +2969,573 @@
       "city": "Los Baños",
       "category": "police_hotlines",
       "alternateNumbers": ["09218901259"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Accounting",
+      "hotlineNumber": "0284781099",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Agriculture",
+      "hotlineNumber": "0285195687",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Anti-Drug Abuse Council",
+      "hotlineNumber": "0283512399",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Assessors",
+      "hotlineNumber": "0287798163",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Budget",
+      "hotlineNumber": "0285110779",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Bureau of Fire Protection",
+      "hotlineNumber": "0288746177",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Bureau of Jail Management and Penology - Male Dormitory",
+      "hotlineNumber": "0283512508",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Business Permit and Licensing Office",
+      "hotlineNumber": "0285515930",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0282938088"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - CENRO",
+      "hotlineNumber": "0282921191",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283329487", "0283329715"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - City Civil Registry",
+      "hotlineNumber": "0283711743",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0282534370"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - City Library",
+      "hotlineNumber": "0283327174",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - City Social Welfare and Development",
+      "hotlineNumber": "0287273425",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283651440", "0282938138", "0282938116", "0283512499"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Clerk of Court",
+      "hotlineNumber": "0282537605",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Commission on Audit",
+      "hotlineNumber": "0285501459",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0288738545"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Engineering",
+      "hotlineNumber": "0282569680",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283329660"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Engineering - Maintenance",
+      "hotlineNumber": "0288018157",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Estate Management and Development Office",
+      "hotlineNumber": "0282834388",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Family Court Br. 2",
+      "hotlineNumber": "0285326442",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - General Services Office",
+      "hotlineNumber": "0288716195",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - HRMD",
+      "hotlineNumber": "0282565198",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Health Office",
+      "hotlineNumber": "0287767268",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Jail - Female Dormitory",
+      "hotlineNumber": "0283618318",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas Lying-In Clinic",
+      "hotlineNumber": "0288295572",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["0285260793"]
+    },
+    {
+      "hotlineName": "Las Piñas P.E.S.O.",
+      "hotlineNumber": "0283615104",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Legal",
+      "hotlineNumber": "0288714360",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0285532975"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Local Disaster Risk Reduction Management",
+      "hotlineNumber": "0282906500",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0282426703", "0282425836"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Mayor's Office",
+      "hotlineNumber": "0288714343",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0288714345", "0288730765", "0288714344", "0285267056"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Media",
+      "hotlineNumber": "0288364366",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Metropolitan Trial Court Branch 121",
+      "hotlineNumber": "0283512538",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Metropolitan Trial Court Branch 122",
+      "hotlineNumber": "0282564199",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Metropolitan Trial Court Branch 124",
+      "hotlineNumber": "0282563559",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Metropolitan Trial Court Branch 79",
+      "hotlineNumber": "0282916213",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "NBI Las Piñas Satellite Office",
+      "hotlineNumber": "0283512490",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Nutrition",
+      "hotlineNumber": "0283512533",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office for Senior Citizens Affair",
+      "hotlineNumber": "0282833854",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Danilo V. Hernandez",
+      "hotlineNumber": "0282435731",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Emmanuel Luis C. Casimiro",
+      "hotlineNumber": "0282938047",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Filemon C. Aguilar III",
+      "hotlineNumber": "0282938153",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Henry Medina",
+      "hotlineNumber": "0286395295",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. John Jess Bustamante",
+      "hotlineNumber": "0285342261",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Lord Linley Aguilar",
+      "hotlineNumber": "0282938386",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Luis I. Bustamante",
+      "hotlineNumber": "0282938173",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Mark Anthony G. Santos",
+      "hotlineNumber": "0289622253",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Oscar C. Peña",
+      "hotlineNumber": "0282938030",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Rex H. Riguera",
+      "hotlineNumber": "0283512395",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Office of Hon. Ruben C. Ramos",
+      "hotlineNumber": "0288714348",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283512795"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Parole and Probation",
+      "hotlineNumber": "0285527340",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Philippine Mediation Center",
+      "hotlineNumber": "0285266498",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Planning",
+      "hotlineNumber": "0288720921",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283512440"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Prosecutor's Office",
+      "hotlineNumber": "0283329579",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Regional Trial Court Branch 198",
+      "hotlineNumber": "0287112298",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Regional Trial Court Branch 199",
+      "hotlineNumber": "0286824379",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Regional Trial Court Branch 253",
+      "hotlineNumber": "0286822005",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Regional Trial Court Branch 254",
+      "hotlineNumber": "0285267122",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Regional Trial Court Branch 255",
+      "hotlineNumber": "0283329605",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0283329629"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - TPMO",
+      "hotlineNumber": "0286580983",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["0283329776"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Treasury",
+      "hotlineNumber": "0288714339",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0288746176"]
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Tricycle Regulatory Management Office",
+      "hotlineNumber": "0284425850",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "utility_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Urban Poor Affairs Office",
+      "hotlineNumber": "0288364797",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Veterinary",
+      "hotlineNumber": "0282552911",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Hall - Vice Mayor's Office",
+      "hotlineNumber": "0284616225",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Las Piñas City Health Laboratory",
+      "hotlineNumber": "0282938164",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Pamplona II Health Center",
+      "hotlineNumber": "0283512578",
+      "regionName": "National Capital Region (NCR)",
+      "province": "Metro Manila",
+      "city": "Las Piñas",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
     }
   ]
 }
