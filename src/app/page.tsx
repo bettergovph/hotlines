@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import logo2 from '/public/bettergov-horizontal-logo.png';
 import { useSearchParams } from 'next/navigation';
@@ -464,4 +464,10 @@ const HomeContent = () => {
   );
 };
 
-export default HomeContent;
+export default function Page() {
+  return (
+    <Suspense>
+      <HomeContent />
+    </Suspense>
+  );
+}
