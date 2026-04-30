@@ -22,6 +22,15 @@
         ]
       },
       {
+        "name": "Region II - Cagayan Valley",
+        "provinces": [
+          {
+            "province": "Cagayan",
+            "cities": ["Aparri"]
+          }
+        ]
+      },      
+      {
         "name": "Region III - Central Luzon",
         "provinces": [
           {

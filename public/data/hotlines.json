@@ -3536,6 +3536,69 @@
       "city": "Las Piñas",
       "category": "medical_hotlines",
       "alternateNumbers": []
-    }
+    },
+    {
+      "hotlineName": "Municipal Disaster Risk Reduction and Management Office",
+      "hotlineNumber": "09566542894",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Aparri Police Station",
+      "hotlineNumber": "09172032003",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Aparri Fire Station",
+      "hotlineNumber": "09164910946",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Philippine Coast Guard - Aparri",
+      "hotlineNumber": "09568301802",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Aparri Provincial Hospital",
+      "hotlineNumber": "09363748430",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Rural Health Unit - Aparri East",
+      "hotlineNumber": "09531908364",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Rural Health Unit - Aparri West",
+      "hotlineNumber": "09359519786",
+      "regionName": "Region II - Cagayan Valley",
+      "province": "Cagayan",
+      "city": "Aparri",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    }    
   ]
 }
