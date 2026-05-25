@@ -1,14 +1,45 @@
 'use client';
 
-import { Share, Smartphone } from 'lucide-react';
+import { Share, Smartphone, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Result, ResultAsync, ok, err } from 'neverthrow';
+
+// Helper to safely interact with sessionStorage
+const safeGetSessionStorage = (key: string): Result<string | null, Error> =>
+  Result.fromThrowable(
+    () => sessionStorage.getItem(key),
+    error => new Error(`Storage access error: ${error}`)
+  )();
+
+const safeSetSessionStorage = (key: string, value: string): Result<void, Error> =>
+  Result.fromThrowable(
+    () => sessionStorage.setItem(key, value),
+    error => new Error(`Storage write error: ${error}`)
+  )();
 
 export default function InstallPrompt() {
   const [isStandalone, setIsStandalone] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
+  const [isDismissed, setIsDismissed] = useState(true);
 
   useEffect(() => {
+    safeGetSessionStorage('installPromptDismissed')
+      .map(val => val === 'true') // Transform string|null to boolean
+      .andThen(dismissed =>
+        // If it's already dismissed, return an err to stop the chain.
+        // If not dismissed, return ok to continue to the next step.
+        dismissed ? err('Banner already dismissed this session') : ok('Show banner')
+      )
+      .map(() => {
+        // This only runs if the result is `ok` (not dismissed)
+        setIsDismissed(false);
+      })
+      .mapErr(reason => {
+        // Optional: log the reason it was skipped
+        console.debug(reason);
+      });
+
     const userAgent = navigator.userAgent;
     const standalone = window.matchMedia('(display-mode: standalone)').matches;
 
@@ -35,20 +66,46 @@ export default function InstallPrompt() {
       return;
     }
 
-    // Show the install prompt
-    deferredPrompt.prompt();
+    ResultAsync.fromPromise(
+      (async () => {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        return outcome;
+      })(),
+      error => new Error(`Prompt failure: ${error}`)
+    )
+      .map(outcome => {
+        // Transform: log the raw outcome and pass it down
+        console.log(`User raw response: ${outcome}`);
+        return outcome;
+      })
+      .andThen(outcome => {
+        // Chain: Decide if it was a success or failure state based on the string
+        return outcome === 'accepted'
+          ? ok('User successfully installed the app')
+          : err(new Error('User declined the installation'));
+      })
+      .match(
+        successMessage => {
+          console.log(successMessage);
+          setDeferredPrompt(null);
+        },
+        errorMessage => {
+          console.log(errorMessage.message);
+          setDeferredPrompt(null);
+        }
+      );
+  };
 
-    // Wait for the user to respond to the prompt
-    const { outcome } = await deferredPrompt.userChoice;
-
-    console.log(`User response: ${outcome}`);
-
-    // Clear the deferredPrompt so it can only be used once
-    setDeferredPrompt(null);
+  const handleDismiss = () => {
+    setIsDismissed(true);
+    safeSetSessionStorage('installPromptDismissed', 'true').mapErr(e =>
+      console.error('Could not save dismissal state:', e)
+    );
   };
 
   // Don't show if already installed
-  if (isStandalone) {
+  if (isStandalone || isDismissed) {
     return null;
   }
 
@@ -60,6 +117,15 @@ export default function InstallPrompt() {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white shadow-lg border-t border-gray-200 pb-safe z-50">
       <div className="max-w-md mx-auto px-4 py-4 sm:py-5">
+        {/* Close Button */}
+        <button
+          onClick={handleDismiss}
+          className="absolute top-2 right-2 p-2 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+          aria-label="Dismiss"
+        >
+          <X size={20} />
+        </button>
+
         <div className="flex flex-col items-center space-y-4">
           <div className="flex items-center gap-2">
             <Smartphone size={20} className="text-blue-600" />

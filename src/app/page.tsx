@@ -4,6 +4,7 @@ import { Suspense, useEffect, useMemo, useState } from 'react';
 import { cn } from '@/lib/utils';
 import logo2 from '/public/bettergov-horizontal-logo.png';
 import { useSearchParams } from 'next/navigation';
+import { Result, ok, err } from 'neverthrow';
 
 import Image from 'next/image';
 import HotlineCard from '@/components/hotline-card';
@@ -34,6 +35,46 @@ import {
   SearchIcon,
 } from 'lucide-react';
 
+type LocationData = {
+  city: string;
+  province: string;
+};
+
+// --- neverthrow local storage helpers ---
+const safeSetLocation = (location: LocationData): Result<void, Error> =>
+  Result.fromThrowable(
+    () => localStorage.setItem('BGHotlines_lastSavedLocation', JSON.stringify(location)),
+    error => new Error(`Failed to save to localStorage: ${error}`)
+  )();
+
+const safeGetLocation = (): Result<LocationData, Error> =>
+  Result.fromThrowable(
+    () => localStorage.getItem('BGHotlines_lastSavedLocation'),
+    error => new Error(`Failed to read from localStorage: ${error}`)
+  )()
+    .andThen(item => (item ? ok(item) : err(new Error('No location saved'))))
+    // Safely parse JSON
+    .andThen(item =>
+      Result.fromThrowable(
+        () => JSON.parse(item) as unknown,
+        error => new Error(`Failed to parse JSON: ${error}`)
+      )()
+    )
+    // Safely validate the schema of the parsed data
+    .andThen(parsed => {
+      if (
+        parsed &&
+        typeof parsed === 'object' &&
+        'city' in parsed &&
+        'province' in parsed &&
+        typeof (parsed as any).city === 'string' &&
+        typeof (parsed as any).province === 'string'
+      ) {
+        return ok(parsed as LocationData);
+      }
+      return err(new Error('Invalid location data format'));
+    });
+
 const HomeContent = () => {
   const [metadata, setMetadata] = useState<IMetadataResponse | null>();
   const [hotlines, setHotlines] = useState<IHotlinesResponse | null>();
@@ -44,10 +85,10 @@ const HomeContent = () => {
   const provinceFromURL = searchParams.get('province')?.toLowerCase();
 
   const [filterOptions, setFilterOptions] = useState<{
-    city: string;
+    location: LocationData | null;
     category: string;
   }>({
-    city: '',
+    location: null,
     category: 'All Hotlines', // default
   });
 
@@ -85,118 +126,94 @@ const HomeContent = () => {
       return;
     }
 
+    const defaultLocation: LocationData = {
+      city: metadata.metadata.regions[0].provinces[0].cities[0].toLowerCase(),
+      province: metadata.metadata.regions[0].provinces[0].province.toLowerCase(),
+    };
+
+    // 1. Check URL parameters first
     if (cityFromURL) {
-      const combinedURL = `${cityFromURL}|${provinceFromURL}`;
-      setFilterOptions(prev => ({
-        ...prev,
-        city: combinedURL,
-      }));
-      localStorage.setItem('lastSavedLocation', combinedURL);
+      const loc: LocationData = {
+        city: cityFromURL,
+        province: provinceFromURL || '',
+      };
+
+      setFilterOptions(prev => ({ ...prev, location: loc }));
+      safeSetLocation(loc).mapErr(console.error);
       setIsDetectingLocation(false);
       return;
     }
 
-    const detectLocation = () => {
-      const getCoords = (): Promise<GeolocationPosition> => {
-        return new Promise((resolve, reject) => {
-          navigator.geolocation.getCurrentPosition(
-            resolve,
-            error => {
-              console.error('Geolocation error:', error);
-              reject(error);
-            },
-            {
+    // 2. Check localStorage SECOND (instead of Geolocation first)
+    safeGetLocation()
+      .map(storedLoc => {
+        // If we found a saved location, set it and stop detecting!
+        setFilterOptions(prev => ({ ...prev, location: storedLoc }));
+        setIsDetectingLocation(false);
+      })
+      .mapErr(() => {
+        // 3. If there is NO saved location, attempt Geolocation
+        const getCoords = (): Promise<GeolocationPosition> => {
+          return new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, error => reject(error), {
               enableHighAccuracy: true,
               timeout: 10000,
+            });
+          });
+        };
+
+        const getLocation = async () => {
+          try {
+            const location = await getCoords();
+            const { longitude, latitude } = location.coords;
+
+            const response = await fetch(
+              `/api/reverse-geocode?latitude=${latitude}&longitude=${longitude}`
+            );
+
+            if (!response.ok) {
+              throw new Error('Failed to reverse geocode');
             }
-          );
-        });
-      };
 
-      const getLocation = async () => {
-        try {
-          const location = await getCoords();
-          const { longitude, latitude } = location.coords;
+            const data = await response.json();
+            const city = data.city;
 
-          console.log('Coords:', { latitude, longitude });
+            const foundProvince = metadata.metadata.regions
+              .flatMap(region => region.provinces)
+              .find(province => province.cities.some(c => c.toLowerCase() === city.toLowerCase()));
 
-          const response = await fetch(
-            `/api/reverse-geocode?latitude=${latitude}&longitude=${longitude}`
-          );
+            const actualCity = foundProvince?.cities.find(
+              c => c.toLowerCase() === city.toLowerCase()
+            );
 
-          if (!response.ok) {
-            throw new Error('Failed to reverse geocode');
+            if (foundProvince && actualCity) {
+              const newLoc: LocationData = {
+                city: actualCity.toLowerCase(),
+                province: foundProvince.province.toLowerCase(),
+              };
+
+              safeSetLocation(newLoc);
+              setFilterOptions(prev => ({ ...prev, location: newLoc }));
+            } else {
+              setFilterOptions(prev => ({ ...prev, location: defaultLocation }));
+            }
+          } catch (err) {
+            console.error('Error detecting location:', err);
+            // Geolocation offline/denied, fall back to default
+            setFilterOptions(prev => ({ ...prev, location: defaultLocation }));
+          } finally {
+            setIsDetectingLocation(false);
           }
+        };
 
-          const data = await response.json();
-          const city = data.city;
-
-          // Find the city and its province in metadata (case-insensitive)
-          const foundProvince = metadata.metadata.regions
-            .flatMap(region => region.provinces)
-            .find(province => province.cities.some(c => c.toLowerCase() === city.toLowerCase()));
-
-          // Get the actual city name from metadata (preserves original casing)
-          const actualCity = foundProvince?.cities.find(
-            c => c.toLowerCase() === city.toLowerCase()
-          );
-
-          const foundCityValue =
-            foundProvince && actualCity
-              ? `${actualCity}|${foundProvince.province}`.toLowerCase()
-              : null;
-
-          console.log('Metadata:', metadata);
-          console.log('City:', city);
-          console.log('Found city value:', foundCityValue);
-
-          if (foundCityValue) {
-            localStorage.setItem('lastSavedLocation', foundCityValue);
-            console.log('City:', city);
-            console.log('Saved location!');
-
-            setFilterOptions(prev => ({
-              ...prev,
-              city: foundCityValue,
-            }));
-          }
-
-          setIsDetectingLocation(false);
-        } catch (err) {
-          console.error('Error detecting location:', err);
-
-          // Offline/denied
-          const stored = localStorage.getItem('lastSavedLocation');
-          if (stored) {
-            setFilterOptions(prev => ({
-              ...prev,
-              city: stored.toLowerCase(),
-            }));
-          }
-
-          setIsDetectingLocation(false);
-        }
-      };
-
-      getLocation();
-    };
-
-    detectLocation();
-
-    // Set default city in city|province format (lowercase for consistency)
-    const defaultCity = metadata.metadata.regions[0].provinces[0].cities[0];
-    const defaultProvince = metadata.metadata.regions[0].provinces[0].province;
-    setFilterOptions(prev => ({
-      ...prev,
-      city: `${defaultCity}|${defaultProvince}`.toLowerCase(),
-    }));
-  }, [metadata]);
+        getLocation();
+      });
+  }, [metadata, cityFromURL, provinceFromURL]);
 
   type LocationFilter = {
     province: string;
     city: string;
-    key: string; // format: "city|province"
-    displayName: string; // format: "city (province)"
+    displayName: string;
   };
 
   // Build city list with province always appended
@@ -210,7 +227,6 @@ const HomeContent = () => {
         province.cities.map(city => ({
           province: province.province,
           city,
-          key: `${city}|${province.province}`.toLowerCase(),
           displayName: `${city} (${province.province})`,
         }))
       );
@@ -229,25 +245,18 @@ const HomeContent = () => {
     );
   }
 
-  const extractLocationFromFilter = (filterValue: string): { city: string; province?: string } => {
-    if (filterValue.includes('|')) {
-      const [city, province] = filterValue.split('|');
-      return { city, province };
-    }
-    return { city: filterValue };
-  };
-
-  const locationFromFilter = extractLocationFromFilter(filterOptions.city);
   let selectedHotlines = hotlines.hotlines.filter(hotline => {
-    if (locationFromFilter.province) {
-      // Match both city and province (case-insensitive)
+    if (!filterOptions.location) {
+      return false;
+    }
+
+    if (filterOptions.location.province) {
       return (
-        hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase() &&
-        hotline.province.toLowerCase() === locationFromFilter.province.toLowerCase()
+        hotline.city.toLowerCase() === filterOptions.location.city.toLowerCase() &&
+        hotline.province.toLowerCase() === filterOptions.location.province.toLowerCase()
       );
     } else {
-      // Legacy: match city only (for backward compatibility, case-insensitive)
-      return hotline.city.toLowerCase() === locationFromFilter.city.toLowerCase();
+      return hotline.city.toLowerCase() === filterOptions.location.city.toLowerCase();
     }
   });
 
@@ -286,7 +295,7 @@ const HomeContent = () => {
   });
 
   return (
-    <div className="flex flex-col bg-slate-50 min-h-[100vh] mx-auto items-center pb-40">
+    <div className="flex flex-col bg-slate-50 min-h-screen mx-auto items-center pb-40">
       {/* NAV/HEADER */}
       <div className="px-4 py-2 flex flex-row justify-start items-center gap-3 bg-white mb-4 w-full border-b border-gray-300">
         <Image height={200} width={200} src={logo2} alt="Logo" />
@@ -303,15 +312,17 @@ const HomeContent = () => {
               aria-expanded={citySelectOpen}
               className="w-full justify-between rounded-full"
             >
-              {filterOptions.city !== ''
+              {filterOptions.location
                 ? locationFilters.find(
-                    c => c.key.toLowerCase() === filterOptions.city.toLowerCase()
-                  )?.displayName || locationFromFilter.city
+                    c =>
+                      c.city.toLowerCase() === filterOptions.location?.city.toLowerCase() &&
+                      c.province.toLowerCase() === filterOptions.location?.province.toLowerCase()
+                  )?.displayName || filterOptions.location.city
                 : 'Select City'}
               <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-[var(--radix-popover-trigger-width)] p-0">
+          <PopoverContent className="w-(--radix-popover-trigger-width) p-0">
             <Command>
               <CommandInput placeholder="Search cities or municipalities..." />
               <CommandList>
@@ -319,21 +330,30 @@ const HomeContent = () => {
                 <CommandGroup>
                   {locationFilters.map(cityData => (
                     <CommandItem
-                      key={cityData.key}
+                      key={`${cityData.city}-${cityData.province}`}
                       value={cityData.displayName}
                       onSelect={() => {
+                        const newLoc: LocationData = {
+                          city: cityData.city.toLowerCase(),
+                          province: cityData.province.toLowerCase(),
+                        };
+
                         setFilterOptions(prev => ({
                           ...prev,
-                          city: cityData.key,
+                          location: newLoc,
                         }));
                         setCitySelectOpen(false);
-                        localStorage.setItem('lastSavedLocation', cityData.key);
+
+                        safeSetLocation(newLoc).mapErr(console.error);
                       }}
                     >
                       <CheckIcon
                         className={cn(
                           'mr-2 h-4 w-4',
-                          filterOptions.city.toLowerCase() === cityData.key.toLowerCase()
+                          filterOptions.location?.city.toLowerCase() ===
+                            cityData.city.toLowerCase() &&
+                            filterOptions.location?.province.toLowerCase() ===
+                              cityData.province.toLowerCase()
                             ? 'opacity-100'
                             : 'opacity-0'
                         )}
@@ -398,7 +418,7 @@ const HomeContent = () => {
         {/* MAIN HOTLINE CARD */}
         <a
           href="tel:911"
-          className="bg-gradient-to-br from-primary-400 to-primary-600 mx-4 p-6 rounded-2xl flex flex-col gap-1 shadow-lg"
+          className="bg-linear-to-br from-primary-400 to-primary-600 mx-4 p-6 rounded-2xl flex flex-col gap-1 shadow-lg"
         >
           <div className="text-white font-bold text-6xl">911</div>
           <div className="flex flex-row justify-between items-center">
@@ -446,14 +466,14 @@ const HomeContent = () => {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button
-                className="gap-2 px-6 py-2.5 border border-gray-300 text-muted-foreground rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                className="gap-2 px-6 py-2.5 border border-gray-300 text-muted-foreground hover:text-white hover:bg-blue-500 rounded-lg font-medium transition-colors cursor-pointer"
                 onClick={() => setFilterOptions(prev => ({ ...prev, category: 'All Hotlines' }))}
               >
                 View All Hotlines
               </button>
             </div>
 
-            <p className="text-muted-foreground text-gray-500 mt-6">
+            <p className="text-gray-500 mt-6">
               Need immediate assistance? Call{' '}
               <span className="font-semibold text-gray-700">911</span> for emergencies.
             </p>
