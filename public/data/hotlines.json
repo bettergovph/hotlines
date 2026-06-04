@@ -154,13 +154,58 @@
       "alternateNumbers": ["09674501815"]
     },
     {
+      "hotlineName": "Civil Service",
+      "hotlineNumber": "09777202406",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Iligan Light and Power Incorporated",
+      "hotlineNumber": "221-5708",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "utility_hotlines",
+      "alternateNumbers": ["223-1188", "221-5709", "222-2777"]
+    },
+    {
+      "hotlineName": "Traffic Division - K9 Unit Tambo",
+      "hotlineNumber": "222-6275",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "government_hotlines",
+      "alternateNumbers": ["199"]
+    },
+    {
+      "hotlineName": "Tipanoy - City Disaster Risk Reduction and Management Office (PDEA)",
+      "hotlineNumber": "225-3216",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "City Disaster Risk Reduction and Management Office (CDRRMO)",
+      "hotlineNumber": "09977262692",
+      "regionName": "Region X - Northern Mindanao",
+      "province": "Lanao del Norte",
+      "city": "Iligan City",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09294665777", "811", "812", "221-8459"]
+    },
+    {
       "hotlineName": "Iligan City Police Office",
       "hotlineNumber": "09177127411",
       "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": ["167"]
+      "alternateNumbers": ["09301165433", "221-6699", "167"]
     },
     {
       "hotlineName": "Iligan City Police Station 1 - Tambo",
@@ -178,7 +223,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": ["09985987008"]
+      "alternateNumbers": ["09985987008", "165"]
     },
     {
       "hotlineName": "Iligan City Police Station 3 - Tag-ibo",
@@ -187,7 +232,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": []
+      "alternateNumbers": ["09177252854", "168"]
     },
     {
       "hotlineName": "Iligan City Police Station 4 - Tubod",
@@ -196,7 +241,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": ["224-4088"]
+      "alternateNumbers": ["224-4088", "162"]
     },
     {
       "hotlineName": "Iligan City Police Station 5 - Poblacion",
@@ -205,7 +250,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": []
+      "alternateNumbers": ["09655390808", "225-5505", "166"]
     },
     {
       "hotlineName": "Iligan City Police Station 6",
@@ -214,7 +259,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": []
+      "alternateNumbers": ["09273832181"]
     },
     {
       "hotlineName": "Iligan City Mobile Force Company",
@@ -232,7 +277,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": []
+      "alternateNumbers": ["221-6699"]
     },
     {
       "hotlineName": "Pnp Crime Laboratory Tipanoy",
@@ -250,16 +295,16 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "fire_hotlines",
-      "alternateNumbers": ["161"]
+      "alternateNumbers": ["161", "221-9055", "221-9056"]
     },
     {
       "hotlineName": "Iligan City Fire Station",
-      "hotlineNumber": "221-9055",
+      "hotlineNumber": "09301165433",
       "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "fire_hotlines",
-      "alternateNumbers": ["9056"]
+      "alternateNumbers": ["221-9055", "09678714388", "211-9056"]
     },
     {
       "hotlineName": "Saray Sub-Station",
@@ -372,7 +417,7 @@
     {
       "hotlineName": "St. Anthony Maternity's and Child",
       "hotlineNumber": "221-5748",
-      "regionName": "Region X - Northern Min danao",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
@@ -381,7 +426,7 @@
     {
       "hotlineName": "Mercy Community Hospitals Inc.",
       "hotlineNumber": "221-8374",
-      "regionName": "Region X - Northern Mindan ao",
+      "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
@@ -1602,7 +1647,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "QC Helpline",
       "hotlineNumber": "122",
@@ -1621,7 +1665,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["09478859929", "09770312892"]
     },
-
     {
       "hotlineName": "Emergency Medical Services / Urban Search and Rescue",
       "hotlineNumber": "89284396",
@@ -1973,7 +2016,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Makati Command Control and Communications Center",
       "hotlineNumber": "82365790",
@@ -1983,7 +2025,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["168"]
     },
-
     {
       "hotlineName": "Makati Police Department",
       "hotlineNumber": "88871798",
@@ -1993,7 +2034,6 @@
       "category": "police_hotlines",
       "alternateNumbers": ["09297936525"]
     },
-
     {
       "hotlineName": "Bureau of Fire Protection",
       "hotlineNumber": "88185150",
@@ -2003,7 +2043,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": ["88162553"]
     },
-
     {
       "hotlineName": "Makati Anti Drug Abuse Council",
       "hotlineNumber": "88701713",
@@ -2013,7 +2052,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["88701715"]
     },
-
     {
       "hotlineName": "Opistal ng Makati",
       "hotlineNumber": "88826316",
@@ -2023,7 +2061,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Makati Health Department",
       "hotlineNumber": "88701607",
@@ -2033,7 +2070,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": ["88701605"]
     },
-
     {
       "hotlineName": "Makati Health Program",
       "hotlineNumber": "88998930",
@@ -2043,7 +2079,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Veterinary Services Office",
       "hotlineNumber": "88897949",
@@ -2053,7 +2088,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Public Safety Department",
       "hotlineNumber": "88193270",
@@ -2063,7 +2097,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Makati Action Center",
       "hotlineNumber": "88701436",
@@ -2073,7 +2106,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": ["88963443"]
     },
-
     {
       "hotlineName": "Department of Environmental Services",
       "hotlineNumber": "88999057",
@@ -2083,7 +2115,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Public Employment Service Office",
       "hotlineNumber": "88701226",
@@ -2093,7 +2124,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": ["88701230"]
     },
-
     {
       "hotlineName": "Makati Social Welfare Department",
       "hotlineNumber": "88701639",
@@ -2103,7 +2133,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Makatizen Card Office",
       "hotlineNumber": "88701090",
@@ -2113,7 +2142,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": ["88701093"]
     },
-
     {
       "hotlineName": "Taguig Command Center",
       "hotlineNumber": "87893200",
@@ -2123,7 +2151,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Taguig Rescue",
       "hotlineNumber": "09190703112",
@@ -2133,7 +2160,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Doctor-on-Call",
       "hotlineNumber": "09190799112",
@@ -2152,7 +2178,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Taguig Cit Hall Office Trunkline",
       "hotlineNumber": "85557800",
@@ -2162,7 +2187,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["77958888"]
     },
-
     {
       "hotlineName": "SM Aura Satellite Office",
       "hotlineNumber": "77959999",
@@ -2172,7 +2196,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Taguig PNP",
       "hotlineNumber": "86423582",
@@ -2182,7 +2205,6 @@
       "category": "police_hotlines",
       "alternateNumbers": ["09985987932"]
     },
-
     {
       "hotlineName": "Roadside Emergency Assistance",
       "hotlineNumber": "86407006",
@@ -2192,7 +2214,6 @@
       "category": "police_hotlines",
       "alternateNumbers": ["09296315924", "092127800569"]
     },
-
     {
       "hotlineName": "City Disaster Risk Valenzuela Reduction & Management Office",
       "hotlineNumber": "83525000",
@@ -2202,7 +2223,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["82921405", "09190094045", "0917881639"]
     },
-
     {
       "hotlineName": "Valenzuela City Fire Station",
       "hotlineNumber": "82923519",
@@ -2212,7 +2232,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Police Station - Main Station",
       "hotlineNumber": "83524000",
@@ -2222,7 +2241,6 @@
       "category": "police_hotlines",
       "alternateNumbers": ["09064197676", "09985987868"]
     },
-
     {
       "hotlineName": "Valenzuela City Emergency Hospital",
       "hotlineNumber": "83526000",
@@ -2232,7 +2250,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Valenzuela Medical Center",
       "hotlineNumber": "82946711",
@@ -2242,7 +2259,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "City Hall Olongapo",
       "hotlineNumber": "2222565",
@@ -2252,7 +2268,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["6114800"]
     },
-
     {
       "hotlineName": "DRRMO / Rescue",
       "hotlineNumber": "09985937446",
@@ -2262,7 +2277,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Fire & Rescue",
       "hotlineNumber": "2231415",
@@ -2272,7 +2286,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Disaster Management Office",
       "hotlineNumber": "09985367121",
@@ -2282,7 +2295,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "SBMA Fire Department",
       "hotlineNumber": "2524830",
@@ -2292,7 +2304,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": ["2524657"]
     },
-
     {
       "hotlineName": "Sta Rita, Rescue, & Disaster Response",
       "hotlineNumber": "09399560009",
@@ -2302,7 +2313,6 @@
       "category": "government_hotlines",
       "alternateNumbers": ["2229225"]
     },
-
     {
       "hotlineName": "Philippine RedCross",
       "hotlineNumber": "09178892783",
@@ -2312,7 +2322,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": ["2222181"]
     },
-
     {
       "hotlineName": "New Cabalan Fire & Rescue",
       "hotlineNumber": "2245414",
@@ -2322,7 +2331,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Old Cabalan Quick Emergency Response",
       "hotlineNumber": "6031700",
@@ -2332,7 +2340,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Gordon Heights Fire & Rescue",
       "hotlineNumber": "2235497",
@@ -2342,7 +2349,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Barretto Fire & Rescue",
       "hotlineNumber": "2224295",
@@ -2352,7 +2358,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "East Bajac Bajac Fire & Rescue",
       "hotlineNumber": "09174365998",
@@ -2362,7 +2367,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": ["2225035"]
     },
-
     {
       "hotlineName": "24/7 Health Hotline",
       "hotlineNumber": "09992226626",
@@ -2372,7 +2376,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Mayor's Action Center",
       "hotlineNumber": "7231511",
@@ -2382,7 +2385,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "BFP Batangas City",
       "hotlineNumber": "4257163",
@@ -2392,7 +2394,6 @@
       "category": "fire_hotlines",
       "alternateNumbers": ["3017996", "09156021984"]
     },
-
     {
       "hotlineName": "PNP Batangas City",
       "hotlineNumber": "7232030",
@@ -2402,7 +2403,6 @@
       "category": "police_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Batangas Medical Center",
       "hotlineNumber": "7230911",
@@ -2412,7 +2412,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "St. Patrick’s Hospital & Medical Center",
       "hotlineNumber": "7231605",
@@ -2422,7 +2421,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Jesus of Nazareth Hospital",
       "hotlineNumber": "7234144",
@@ -2432,7 +2430,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Golden Gate General Hospital",
       "hotlineNumber": "7232508",
@@ -2442,7 +2439,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "Batangas Healthcare Specialists Medical Center",
       "hotlineNumber": "4038642",
@@ -2452,7 +2448,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "United Doctors of St. Camillus de Lellis Hospital and Medical Center",
       "hotlineNumber": "09189942074",
@@ -2462,7 +2457,6 @@
       "category": "medical_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "City Disaster Risk Reduction and Management Office",
       "hotlineNumber": "7023902",
@@ -2472,7 +2466,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "MERALCO",
       "hotlineNumber": "16211",
@@ -2482,7 +2475,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": ["16222847"]
     },
-
     {
       "hotlineName": "National Power Corporation",
       "hotlineNumber": "3003592",
@@ -2492,7 +2484,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "PrimeWater Batangas City",
       "hotlineNumber": "09494142633",
@@ -2502,7 +2493,6 @@
       "category": "utility_hotlines",
       "alternateNumbers": ["9806928"]
     },
-
     {
       "hotlineName": "LTO Batangas City",
       "hotlineNumber": "7409738",
@@ -2512,7 +2502,6 @@
       "category": "government_hotlines",
       "alternateNumbers": []
     },
-
     {
       "hotlineName": "VAWC Batangas City",
       "hotlineNumber": "09568267017",
