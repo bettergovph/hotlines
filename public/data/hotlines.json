@@ -1,6 +1,240 @@
 {
   "hotlines": [
     {
+      "hotlineName": "Station 10 (Calumpang)",
+      "hotlineNumber": "09995489244",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 9 (Mabuhay)",
+      "hotlineNumber": "09488741661",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 8 (Tinagacan)",
+      "hotlineNumber": "09985987223",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 7 (Fatima)",
+      "hotlineNumber": "09985987220",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 6 (Bula)",
+      "hotlineNumber": "09985987218",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 5 (Makar-Siguel Road)",
+      "hotlineNumber": "09073134517",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 4 (San Isidro)",
+      "hotlineNumber": "09985987214",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 3 (Lagao)",
+      "hotlineNumber": "09985987212",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 2 (Makar Wharf)",
+      "hotlineNumber": "09189213580",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Station 1 (Dad. East)",
+      "hotlineNumber": "09985987208",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "police_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Mobile Patrol Unit",
+      "hotlineNumber": "822-0215",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "government_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Traffic Enforcement Unit",
+      "hotlineNumber": "09100436910",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "government_hotlines",
+      "alternateNumbers": ["825-3894"]
+    },
+    {
+      "hotlineName": "Bureau of Fire Protection (BFP)",
+      "hotlineNumber": "09433415561",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "fire_hotlines",
+      "alternateNumbers": ["160", "552-1160"]
+    },
+    {
+      "hotlineName": "GenSan - City Disaster Risk Reduction Management Office (CDRRMO)",
+      "hotlineNumber": "09434614548",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "government_hotlines",
+      "alternateNumbers": ["552-3939", "552-8861"]
+    },
+    {
+      "hotlineName": "Task Force Gensan",
+      "hotlineNumber": "09051443676",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "government_hotlines",
+      "alternateNumbers": ["887-0618"]
+    },
+    {
+      "hotlineName": "Dr. Jorge P. Royeca City Hospital",
+      "hotlineNumber": "09123762331",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["552-2811"]
+    },
+    {
+      "hotlineName": "Soccsargen Country Hospital",
+      "hotlineNumber": "09326924708",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["553-8906"]
+    },
+    {
+      "hotlineName": "Gensan Doctors Hospital",
+      "hotlineNumber": "09338217257",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["250-2777"]
+    },
+    {
+      "hotlineName": "St. Elizabeth Hospital",
+      "hotlineNumber": "09190719004",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["552-3162"]
+    },
+    {
+      "hotlineName": "Mindanao Medical Center",
+      "hotlineNumber": "553-8207",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["554-9640"]
+    },
+    {
+      "hotlineName": "Labella Hospital",
+      "hotlineNumber": "553-3509",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Auguis Clinic",
+      "hotlineNumber": "552-4911",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Sarangani Bay Specialists Medical Center",
+      "hotlineNumber": "09190678395",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["887-8888"]
+    },
+    {
+      "hotlineName": "Dadiangas Medical Center",
+      "hotlineNumber": "09171902561",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Gensan Medical Center",
+      "hotlineNumber": "887-9898",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Diagan Cooperative Hospital",
+      "hotlineNumber": "09238094705",
+      "regionName": "Region XII - SOCCSKSARGEN",
+      "province": "South Cotabato",
+      "city": "General Santos City",
+      "category": "medical_hotlines",
+      "alternateNumbers": ["552-3942"]
+    },
+    {
       "hotlineName": "Aquino Medical Specialists Hospital, Inc.",
       "hotlineNumber": "0842162156",
       "regionName": "Region XI - Davao Region",

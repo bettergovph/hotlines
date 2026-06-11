@@ -232,6 +232,15 @@ const HomeContent = () => {
       );
   }, [metadata]);
 
+  const updateUrl = (location: LocationData) => {
+    const params = new URLSearchParams(window.location.search);
+
+    params.set('city', location.city);
+    params.set('province', location.province);
+
+    window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+  };
+
   if (!hotlines || !metadata || isDetectingLocation) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -342,6 +351,8 @@ const HomeContent = () => {
                           ...prev,
                           location: newLoc,
                         }));
+
+                        updateUrl(newLoc);
                         setCitySelectOpen(false);
 
                         safeSetLocation(newLoc).mapErr(console.error);
