@@ -439,7 +439,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "police_hotlines",
-      "alternateNumbers": ["09301165433", "221-6699", "167"]
+      "alternateNumbers": ["09985987004", "221-6699", "167"]
     },
     {
       "hotlineName": "Iligan City Police Station 1 - Tambo",
@@ -529,7 +529,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "fire_hotlines",
-      "alternateNumbers": ["161", "221-9055", "221-9056"]
+      "alternateNumbers": ["161", "09678714388", "221-9055", "221-9056"]
     },
     {
       "hotlineName": "Iligan City Fire Station",
@@ -569,12 +569,12 @@
     },
     {
       "hotlineName": "Philippine Red Cross - Iligan City Chapter",
-      "hotlineNumber": "222-2907",
+      "hotlineNumber": "09177202291",
       "regionName": "Region X - Northern Mindanao",
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
-      "alternateNumbers": []
+      "alternateNumbers": ["229-1065", "222-2907"]
     },
     {
       "hotlineName": "Philippine Red Cross - Iligan City Blood Center",
@@ -592,7 +592,7 @@
       "province": "Lanao del Norte",
       "city": "Iligan City",
       "category": "medical_hotlines",
-      "alternateNumbers": ["09692337878"]
+      "alternateNumbers": ["811", "09692337878", "221-8459"]
     },
     {
       "hotlineName": "Dr. Uy Hospital Inc.",
