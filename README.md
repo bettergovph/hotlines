@@ -125,6 +125,20 @@ The app implements a robust offline-first approach:
 3. Offline fallback page
 4. Persistent data storage
 
+## Testing
+
+The project uses [Vitest](https://vitest.dev/) for unit testing.
+
+### Running Tests
+
+```bash
+npm test
+```
+
+### Test Coverage
+
+Tests are located in `src/lib/utils.test.ts` utility.
+
 ## Getting Started
 
 1. Clone the repository
