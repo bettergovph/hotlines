@@ -3822,6 +3822,42 @@
       "city": "Aparri",
       "category": "medical_hotlines",
       "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Marilao Command Center",
+      "hotlineNumber": "09258881111",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Marilao",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0449198191"]
+    },
+    {
+      "hotlineName": "Marilao MDRRMO",
+      "hotlineNumber": "09694622952",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Marilao",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0442485523"]
+    },
+    {
+      "hotlineName": "Marilao Fire Station",
+      "hotlineNumber": "09209408181",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Marilao",
+      "category": "fire_hotlines",
+      "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Marilao Police Station",
+      "hotlineNumber": "09985985385",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Marilao",
+      "category": "police_hotlines",
+      "alternateNumbers": ["0442489166", "0447693800"]
     }
   ]
 }

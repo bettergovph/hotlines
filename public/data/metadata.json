@@ -34,6 +34,10 @@
         "name": "Region III - Central Luzon",
         "provinces": [
           {
+            "province": "Bulacan",
+            "cities": ["Marilao"]
+          },
+          {
             "province": "Zambales",
             "cities": ["Olongapo"]
           }
