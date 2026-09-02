@@ -3876,6 +3876,168 @@
       "city": "Bocaue",
       "category": "medical_hotlines",
       "alternateNumbers": []
+    },
+    {
+      "hotlineName": "Brgy. Antipona",
+      "hotlineNumber": "09611501961",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09266755230"]
+    },
+    {
+      "hotlineName": "Brgy. Bambang",
+      "hotlineNumber": "09265469708",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09634530379"]
+    },
+    {
+      "hotlineName": "Brgy. Batia",
+      "hotlineNumber": "09647579780",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09226266091", "09435640931", "09922489614"]
+    },
+    {
+      "hotlineName": "Brgy. Biñang 1st",
+      "hotlineNumber": "0447924300",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09661944858", "09935669591"]
+    },
+    {
+      "hotlineName": "Brgy. Biñang 2nd",
+      "hotlineNumber": "09227090700",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09384166144"]
+    },
+    {
+      "hotlineName": "Brgy. Bolacan",
+      "hotlineNumber": "09979263410",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09279669947"]
+    },
+    {
+      "hotlineName": "Brgy. Bunducan",
+      "hotlineNumber": "09772044957",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09159058302", "09283720840"]
+    },
+    {
+      "hotlineName": "Brgy. Bunlo",
+      "hotlineNumber": "09664200478",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09333116578", "09945121331"]
+    },
+    {
+      "hotlineName": "Brgy. Caingin",
+      "hotlineNumber": "0446401266",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09765376739", "09623683824"]
+    },
+    {
+      "hotlineName": "Brgy. Duhat",
+      "hotlineNumber": "09670730243",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09167132423", "09511509371"]
+    },
+    {
+      "hotlineName": "Brgy. Igulot",
+      "hotlineNumber": "09778440090",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09171840090"]
+    },
+    {
+      "hotlineName": "Brgy. Lolomboy",
+      "hotlineNumber": "09708173959",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09124856342", "09465100999"]
+    },
+    {
+      "hotlineName": "Brgy. Poblacion",
+      "hotlineNumber": "0443092956",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09237076439", "09219298901"]
+    },
+    {
+      "hotlineName": "Brgy. Sulucan",
+      "hotlineNumber": "0449136980",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09959321367", "09065902809"]
+    },
+    {
+      "hotlineName": "Brgy. Taal",
+      "hotlineNumber": "09239363599",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09293221916"]
+    },
+    {
+      "hotlineName": "Brgy. Tambubong",
+      "hotlineNumber": "09618689336",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["0447924974", "09101703620", "09226914677"]
+    },
+    {
+      "hotlineName": "Brgy. Turo",
+      "hotlineNumber": "09930965617",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09158042310", "09501374166"]
+    },
+    {
+      "hotlineName": "Brgy. Wakas",
+      "hotlineNumber": "09657239169",
+      "regionName": "Region III - Central Luzon",
+      "province": "Bulacan",
+      "city": "Bocaue",
+      "category": "government_hotlines",
+      "alternateNumbers": ["09473523352", "09976270271"]
     }
   ]
 }
