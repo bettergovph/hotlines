@@ -1,7 +1,7 @@
 'use client';
 
 import { THotlineCategory } from '@/interfaces/IHotlines';
-import { cn } from '@/lib/utils';
+import { cn, formatPhoneNumber } from '@/lib/utils';
 import { Flame, Hospital, Landmark, LucideIcon, Phone, Siren } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -66,7 +66,7 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
   const Icon = icons[type];
 
   const handleCall = (phoneNumber: string) => {
-    window.location.href = `tel:${phoneNumber}`;
+    window.location.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
     setIsAltNumModalOpen(false);
   };
 
@@ -95,7 +95,7 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
                 className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
               >
                 <Phone size={16} />
-                <span>{number}</span>
+                <span>{formatPhoneNumber(number)}</span>
               </Button>
 
               {alternateNumbers && alternateNumbers.length > 0 && (
@@ -118,7 +118,7 @@ const HotlineCard: React.FC<HotlineCardProps> = ({
                           className="flex items-center gap-3 text-blue-600 text-base justify-start h-auto py-3"
                         >
                           <Phone size={16} />
-                          <span>{altNumber}</span>
+                          <span>{formatPhoneNumber(altNumber)}</span>
                         </Button>
                       ))}
                     </div>
